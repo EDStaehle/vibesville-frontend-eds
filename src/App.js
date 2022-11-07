@@ -1,25 +1,44 @@
 import logo from './logo.svg';
 import './App.css';
+import Login from './components/Login';
+import Logout from './components/Logout';
+import Profile from './components/Profile';
+// import BestJobs from './components/BestJobs';
+// import { useAuth0 } from "@auth0/auth0-react";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <h1>VibesVille</h1>
+    <Login />
+    <Logout />
+    <Profile />
+    </>
   );
 }
 
-export default App;z
+export default App;
+
+//add <BestJobs />
+// wrap App -->
+// export default withAuth0(App);
+
+
+// function App() {
+//   return (
+//     <>
+//       <h1>VibesVille</h1>
+//       {this.props.auth0.isAuthenticated ?
+//         <>
+//           <Profile />
+//           <BestJobs />
+//           <Logout />
+//         </>
+//         :
+//         <Login />
+//       }
+//     </>
+//   );
+// }
+
+// export default withAut0(App);
