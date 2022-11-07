@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import JobCard from './JobCard'
 import axios from 'axios';
+import JobModal from './JobModal'
 
 export default class Main extends Component {
   constructor(props) {
@@ -26,7 +27,7 @@ export default class Main extends Component {
 
     try {
 
-      let url = ''
+      let url = `https://vibesville.herokuapp.com/jobs?jobQuery=${this.state.jobTitle}`
 
       let jobs = await axios.get(url);
       this.setState({
@@ -37,6 +38,10 @@ export default class Main extends Component {
       this.setState({
       })
     }}
+
+    openModal = (job) => {
+      this.setState({selectedJob: job, modalDisplay: true})
+    }
 
   render() {
     return (
@@ -56,15 +61,14 @@ export default class Main extends Component {
           {
             this.state.jobs ?
             this.state.jobs.map((job) => {
-              return <JobCard title={job.title} company={job.company} location={job.location} description={job.description} modalOpen={this.setState({selectedJob: job})}/>
-            }): <p>no jobs found</p>
+              return <JobCard job={job} modalOpen={this.openModal}/>
+            }): null
           }
           {
-          //   this.state.selectedBook &&
-          // < show={this.state.updateDisplay} 
-          // onHide={()=> this.setState({updateDisplay: false})} 
-          // book={this.state.selectedBook} 
-          // updateBooks={this.updateBooks}/>
+          <JobModal show={this.state.modalDisplay} 
+          onHide={()=> this.setState({modalDisplay: false})} 
+          job={this.state.selectedJob} 
+          />
           }
         </div>
       </>

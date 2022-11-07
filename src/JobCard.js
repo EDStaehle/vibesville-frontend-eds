@@ -3,25 +3,31 @@ import Card from 'react-bootstrap/Card';
 import './JobCard.css'
 
 export default class JobCard extends Component {
+  
+
+  openModal = () => {
+    this.props.modalOpen(this.props.job)
+  }
+
   render() {
     return (
     <Card>
       <Card.Body>
         <Card.Title>
           <div>
-            <h2>This.Company.name</h2>
-            <h5>This.Job.name</h5>
+            <h2>{this.props.job.company}</h2>
+            <h5>{this.props.job.title}</h5>
           </div>
           <div>
-            <h2>This.Job.location</h2>
+            <h2>{this.props.job.city},{this.props.job.state}</h2>
           </div>
         </Card.Title>
         <Card.Text>
           <div id='cardContContainer'>
             <div id='jobDescription'>
               <h4>Description</h4>
-              <p>Job Description Job DescriptionJob DescriptionJob DescriptionJob DescriptionJob DescriptionJob DescriptionJob DescriptionJob DescriptionJob DescriptionJob Description</p>
-              <button>View More</button>
+              <p>{this.props.job.description}</p>
+              <button onClick={this.openModal}>View More</button>
             </div>
             <div id='cityVibeContainer'>
               <h4>City Vibe Score = this.city.vibescore</h4>
