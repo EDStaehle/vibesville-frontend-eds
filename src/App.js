@@ -9,15 +9,10 @@ import Profile from './components/Profile';
 function App() {
   return (
     <>
-      <h1>VibesVille</h1>
-      {this.props.auth0.isAuthenticated ?
-        <>
-          <Profile />
-          <Logout />
-        </>
-        :
-        <Login />
-      }
+    <h1>VibesVille</h1>
+    <Login />
+    <Logout />
+    <Profile />
     </>
   );
 }
@@ -27,3 +22,23 @@ export default App;
 //add <BestJobs />
 // wrap App -->
 // export default withAuth0(App);
+
+
+// function App() {
+//   return (
+//     <>
+//       <h1>VibesVille</h1>
+//       {this.props.auth0.isAuthenticated ?
+//         <>
+//           <Profile />
+//           <BestJobs />
+//           <Logout />
+//         </>
+//         :
+//         <Login />
+//       }
+//     </>
+//   );
+// }
+
+// export default withAut0(App);
