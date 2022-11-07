@@ -16,3 +16,7 @@ function App() {
 }
 
 export default App;
+
+//add <BestJobs />
+// wrap App -->
+// export default withAuth0(App);
