@@ -12,13 +12,13 @@ export default LoginButton;
 
 
 
-//add this to Savedcity/BestCity component->
+//add this to SavedJobs/BestJobs component->
 
 // import { useAuth0 } from "@auth0/auth0-react";  <------
 
 // then wrap export default BestCity component with higher order component ->
 
-// export default withAuth0(BestCity);   <---
+// export default withAuth0(BestJobs);   <---
 
 //----------------------------------------------------------------
  // EXAMPLE FOR USING AUTH0 WITH SAVED USER/JOB/CITY LIST:
