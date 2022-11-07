@@ -21,37 +21,38 @@ export default LoginButton;
 // export default withAuth0(BestCity);   <---
 
 //----------------------------------------------------------------
+ // EXAMPLE FOR USING AUTH0 WITH SAVED USER/JOB/CITY LIST:
 
-class BestCity extends React.Component{
-  constructor(props){
-    super(props);
-    this.state = {
-      cities: []
-    }
-  }
+// class BestJobs extends React.Component{
+//   constructor(props){
+//     super(props);
+//     this.state = {
+//       jobs: []
+//     }
+//   }
   
-  async componenentDidMount(){
+//   async componenentDidMount(){
 
-    if(this.props.auth0.isAuthenticated){
-      const res = await this.props.auth0.getIdTokenClaims();
+//     if(this.props.auth0.isAuthenticated){
+//       const res = await this.props.auth0.getIdTokenClaims();
 
-      const jwt = res.__raw;
+//       const jwt = res.__raw;
 
-      console.log('token: ', jwt);   
+//       console.log('token: ', jwt);   
 
-      const config = {
-        header: ( "Authorization": `Bearer ${jwt}`),
-        method: 'get',
-        baseURL: process.env.REACT_APP_SERVER,
-        url: '/cities'
-      }
-      let cityData = await axios(config);
+//       const config = {
+//         header: ( "Authorization": `Bearer ${jwt}`),
+//         method: 'get',
+//         baseURL: process.env.REACT_APP_SERVER,
+//         url: '/jobs'
+//       }
+//       let cityData = await axios(config);
       
       
-      this.setState({
-        city: cityData.data
-      })
-    }
-  }
+//       this.setState({
+//         city: jobsData.data
+//       })
+//     }
+//   }
   
-}
+// }
