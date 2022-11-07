@@ -45,7 +45,7 @@ class BestCity extends React.Component{
         baseURL: process.env.REACT_APP_SERVER,
         url: '/cities'
       }
-      let cityData = await axios.get(config);
+      let cityData = await axios(config);
       
       
       this.setState({
