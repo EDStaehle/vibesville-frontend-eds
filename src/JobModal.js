@@ -1,7 +1,8 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Modal from 'react-bootstrap/Modal';
+import { withAuth0 } from '@auth0/auth0-react';
 
-export default class JobModal extends Component {
+class JobModal extends React.Component {
   render() {
     return (
       <Modal show={this.props.show} onHide={this.props.onHide} >
@@ -38,3 +39,5 @@ export default class JobModal extends Component {
     )
   }
 }
+
+export default withAuth0(JobModal);
