@@ -1,16 +1,17 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Main from './Main'
 import './App.css';
 import Login from './components/Login';
 import Logout from './components/Logout';
 import Profile from './components/Profile';
 // import BestJobs from './components/BestJobs';
-// import { useAuth0 } from "@auth0/auth0-react";
 import data from './data.json'
 import Sidebar from './Sidebar';
+// import { DEFAULT_BREAKPOINTS } from 'react-bootstrap/esm/ThemeProvider';
+import { withAuth0 } from '@auth0/auth0-react';
 
 
-export default class App extends Component {
+class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -36,23 +37,27 @@ setSaved = () => {
     saved: saved
   })
 }
+
   render() {
     return (
       <>
-        <Sidebar
-        setSaved={this.setSaved}
-          saved={this.state.saved}
-          favs={this.state.stars}
-          data={this.state.data}
-          show={this.state.show}
-          showCanvas={this.showCanvas}
-          hideCanvas={this.hideCanvas}
-        />
         <div>
-          <h1>VibesVille</h1>
-          <Login />
-          <Logout />
-          <Profile />
+          {this.props.auth0.isAuthenticated  ?
+          <>
+            <Profile />
+            <Logout />
+            <Sidebar
+            setSaved={this.setSaved}
+              saved={this.state.saved}
+              favs={this.state.stars}
+              data={this.state.data}
+              show={this.state.show}
+              showCanvas={this.showCanvas}
+              hideCanvas={this.hideCanvas}
+            />
+          </>
+          :
+          <Login />}
           <Main/>
         </div>
       </>
@@ -60,6 +65,6 @@ setSaved = () => {
   }
 }
 
-
+export default withAuth0(App);
 
 
