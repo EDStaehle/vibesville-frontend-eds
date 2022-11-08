@@ -1,12 +1,34 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import './Sidebar.css'
+import { useAuth0, withAuth0 } from "@auth0/auth0-react";
+import axios from 'axios';
 
-export default class Sidebar extends Component {
+ class Sidebar extends React.Component {
+  async componentDidMount(){
+    if(this.props.auth0.isAuthenticated){
+      const res = await this.props.auth0.getIdTokenClaims();
+
+      const jwt = res.__raw;
+
+      console.log('token:  ', jwt);
+
+      const config = {
+        headers: { "Authorization": `Bearer ${jwt}`},
+        method: 'get',
+        baseURL: process.env.REACT_APP_SERVER,
+        url: '/books'
+      }
+
+      let savedData = await axios(config);
+
+      this.props.setSaved(savedData.data)
+    }
+  }
   render() {
-    let data = this.props.data.map((d) => (
+    let data = this.props.saved.map((d) => (
       <Card key={d.title}>
       <Card.Body className='cardBody'>
         <Card.Title>
@@ -51,3 +73,4 @@ export default class Sidebar extends Component {
     )
   }
 }
+export default withAuth0(Sidebar);

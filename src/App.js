@@ -32,7 +32,11 @@ hideCanvas = () =>{
     show: false
   })
 }
-
+setSaved = () => {
+  this.setState({
+    saved: saved
+  })
+}
 
   render() {
     return (
@@ -43,6 +47,7 @@ hideCanvas = () =>{
             <Profile />
             <Logout />
             <Sidebar
+            setSaved={this.setSaved}
               saved={this.state.saved}
               favs={this.state.stars}
               data={this.state.data}
