@@ -1,10 +1,12 @@
-import React, { Component } from 'react'
+import React from 'react'
 import JobCard from './JobCard'
 import axios from 'axios';
 import JobModal from './JobModal'
 import './Main.css'
+import { withAuth0 } from '@auth0/auth0-react';
 
-export default class Main extends Component {
+
+class Main extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -76,3 +78,5 @@ export default class Main extends Component {
     )
   }
 }
+
+export default withAuth0(Main);
