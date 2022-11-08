@@ -5,11 +5,11 @@ import Login from './components/Login';
 import Logout from './components/Logout';
 import Profile from './components/Profile';
 // browser routes
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route
-} from "react-router-dom";
+// import {
+//   BrowserRouter as Router,
+//   Routes,
+//   Route
+// } from "react-router-dom";
 // import BestJobs from './components/BestJobs';
 
 import Sidebar from './Sidebar';
