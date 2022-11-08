@@ -1,4 +1,4 @@
-import React, { Component, useState } from 'react';
+import React, { Component } from 'react';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
@@ -20,7 +20,7 @@ export default class Sidebar extends Component {
           </div>
           
           </Card.Title>
-     <Card.Text>
+      <Card.Text>
       <div className='cardContainer'>
         <div className='cardScore'>
           <p>VibesVille Score = this.state.score</p>
@@ -29,9 +29,9 @@ export default class Sidebar extends Component {
           <p>THIS MANY STARS</p>
         </div>
       </div>
-     </Card.Text>
+      </Card.Text>
       </Card.Body>
-     </Card>
+      </Card>
     ))
     return (
       <>
