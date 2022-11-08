@@ -71,6 +71,7 @@ class Main extends React.Component {
           <JobModal show={this.state.modalDisplay} 
           onHide={()=> this.setState({modalDisplay: false})} 
           job={this.state.selectedJob} 
+          setSaved={this.props.setSaved}
           />
           }
         </div>
