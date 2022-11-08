@@ -25,6 +25,7 @@ class JobModal extends React.Component {
     }
     this.postFavJob(favoriteJob)
     this.props.onHide();
+    this.props.setSaved(favoriteJob);
   }
 
   postFavJob = async (favoriteJobObj) => {
@@ -69,7 +70,7 @@ class JobModal extends React.Component {
                   <Form.Label>Job Rating</Form.Label>
                   <Form.Control type="number" placeholder="Enter Job Rating " min='1' max='5' required />
                 </Form.Group>
-                <Button variant="primary" type="submit">
+                <Button variant="primary" type="submit" >
                 Submit
               </Button>
               </Form>

@@ -10,24 +10,14 @@ import axios from 'axios';
 class Sidebar extends React.Component {
   async componentDidMount(){
     if(this.props.auth0.isAuthenticated){
-      const res = await this.props.auth0.getIdTokenClaims();
 
-      const jwt = res.__raw;
+        let savedData = await axios.get(`https://vibesville.herokuapp.com/saved/${this.props.auth0.user.email}`);
+        console.log(this.props.savedData)
+        this.props.setSaved(savedData.data)
 
-      console.log('token:  ', jwt);
-
-      const config = {
-        headers: { "Authorization": `Bearer ${jwt}`},
-        method: 'get',
-        baseURL: process.env.REACT_APP_SERVER,
-        url: `/saved/${this.props.auth0.email}`
-      }
-      
-      let savedData = await axios(config);
-
-      this.props.setSaved(savedData.data)
     }
   }
+
   render() {
     let data = this.props.saved.map((d) => (
       <Card key={d.title} className='sidebarCard'>

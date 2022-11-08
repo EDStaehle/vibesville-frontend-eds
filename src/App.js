@@ -43,11 +43,17 @@ class App extends React.Component {
     })
   }
 
+  setSavedNew = (newJob) => {
+    this.setState({
+      saved: [...this.state.saved, newJob]
+    })
+  }
+
   render() {
-    // console.log(this.props.auth0.user.email)
+    console.log(this.state.saved)
     return (
       <>
-        <Router>
+        {/* <Router>
           <div>
             
             <Routes>
@@ -57,7 +63,7 @@ class App extends React.Component {
               <Route>
               </Route>
             </Routes>
-          </div>
+          </div> */}
           <div>
             {this.props.auth0.isAuthenticated ?
               <>
@@ -75,9 +81,9 @@ class App extends React.Component {
               </>
               :
               <Login />}
-            <Main />
+            <Main setSaved={this.setSavedNew}/>
           </div>
-        </Router>
+        {/* </Router> */}
       </>
     )
   }
