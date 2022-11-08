@@ -3,7 +3,7 @@
 }
 .card{
   margin-left: 10rem;
-  width: 500px;
+  width: 300px !important;
   height: 150px !important;
   margin-bottom: 10px;
 }
