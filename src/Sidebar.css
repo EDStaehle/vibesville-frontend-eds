@@ -3,13 +3,16 @@
 }
 .sidebarCard{
   margin-left: 10rem;
+
   width: 500px !important;
   height: 150px !important;
+
   margin-bottom: 10px;
 }
 .cardBody{
   padding: .01px !important;
 }
+
 .sidebarCardTitle{
   display: flex;
   padding-left: 10px;
