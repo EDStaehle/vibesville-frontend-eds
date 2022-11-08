@@ -65,15 +65,7 @@ class JobModal extends React.Component {
                 <li>Metric 3</li>
                 <li>Metric 4</li>
               </ul>
-              <Form onSubmit={this.handleJobSumbit}>
-                <Form.Group className="jobRating" controlId="jobRating">
-                  <Form.Label>Job Rating</Form.Label>
-                  <Form.Control type="number" placeholder="Enter Job Rating " min='1' max='5' required />
-                </Form.Group>
-                <Button variant="primary" type="submit" >
-                Submit
-              </Button>
-              </Form>
+              
             </div>
           </div>
         </Modal.Body>
