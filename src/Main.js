@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import JobCard from './JobCard'
 import axios from 'axios';
 import JobModal from './JobModal'
+import './Main.css'
 
 export default class Main extends Component {
   constructor(props) {
@@ -45,9 +46,9 @@ export default class Main extends Component {
 
   render() {
     return (
-      <>
+      <div className='mainContain'>
         <header>
-          <img src='https://via.placeholder.com/800x400/'></img>
+          <img src='https://via.placeholder.com/800x400/' alt='placeholder'></img>
           <h1>VibesVille</h1>
         </header>
         <div id='searchBar'>
@@ -61,7 +62,7 @@ export default class Main extends Component {
           {
             this.state.jobs ?
             this.state.jobs.map((job) => {
-              return <JobCard job={job} modalOpen={this.openModal}/>
+              return <JobCard job={job} modalOpen={this.openModal} key={job._id}/>
             }): null
           }
           {
@@ -71,7 +72,7 @@ export default class Main extends Component {
           />
           }
         </div>
-      </>
+      </div>
     )
   }
 }
