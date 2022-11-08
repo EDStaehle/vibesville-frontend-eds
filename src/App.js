@@ -1,4 +1,5 @@
-import logo from './logo.svg';
+import React, { Component } from 'react'
+import Main from './Main'
 import './App.css';
 // import Login from './components/Login';
 // import Logout from './components/Logout';
@@ -44,12 +45,18 @@ hideCanvas = () =>{
          showCanvas={this.showCanvas}
          hideCanvas={this.hideCanvas}
         />
-
-
+      <div>
+        <h1>VibesVille</h1>
+        <Login />
+        <Logout />
+        <Profile />
+        <Main/>
+      </div>
       </>
     )
   }
 }
+
 
 
 
