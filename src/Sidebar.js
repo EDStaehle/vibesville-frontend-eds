@@ -6,7 +6,7 @@ import './Sidebar.css'
 import { useAuth0, withAuth0 } from "@auth0/auth0-react";
 import axios from 'axios';
 
- class Sidebar extends React.Component {
+class Sidebar extends React.Component {
   async componentDidMount(){
     if(this.props.auth0.isAuthenticated){
       const res = await this.props.auth0.getIdTokenClaims();
