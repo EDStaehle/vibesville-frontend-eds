@@ -39,6 +39,7 @@ setSaved = (saved) => {
 }
 
   render() {
+    // console.log(this.props.auth0.user.email)
     return (
       <>
         <div>
