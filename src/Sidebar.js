@@ -6,6 +6,7 @@ import './Sidebar.css'
 import { useAuth0, withAuth0 } from "@auth0/auth0-react";
 import axios from 'axios';
 
+
 class Sidebar extends React.Component {
   async componentDidMount(){
     if(this.props.auth0.isAuthenticated){
@@ -19,9 +20,9 @@ class Sidebar extends React.Component {
         headers: { "Authorization": `Bearer ${jwt}`},
         method: 'get',
         baseURL: process.env.REACT_APP_SERVER,
-        url: '/books'
+        url: `/saved/${this.props.auth0.email}`
       }
-
+      
       let savedData = await axios(config);
 
       this.props.setSaved(savedData.data)
@@ -29,10 +30,10 @@ class Sidebar extends React.Component {
   }
   render() {
     let data = this.props.saved.map((d) => (
-      <Card key={d.title}>
+      <Card key={d.title} className='sidebarCard'>
       <Card.Body className='cardBody'>
         <Card.Title>
-          <div className='cardTitle'>
+          <div className='sidebarCardTitle'>
             <h2>{d.title}
             <div className='cardCity'>
               <h6>{d.city}</h6>
