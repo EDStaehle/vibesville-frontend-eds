@@ -1,0 +1,43 @@
+.canvas{
+  width: 800px !important;
+}
+.card{
+  margin-left: 10rem;
+  width: 500px;
+  height: 150px !important;
+  margin-bottom: 10px;
+}
+.cardBody{
+  padding: .01px !important;
+}
+.cardTitle{
+  display: flex;
+  padding-left: 10px;
+  padding-right: 10px;
+  justify-content: space-between;
+  border-bottom: 1px solid black;
+  align-items: center;
+  margin-bottom: .01px;
+}
+.cardTitle h2{
+  height: 60px !important;
+}
+div.card-title.h5{
+  margin-bottom: .01px !important;
+}
+.cardCity{
+  padding-top:10px;
+  margin-bottom: .01px !important;
+}
+.cardCity h6{
+  margin-bottom: .01px;
+}
+.cardContainer{
+  display: flex;
+}
+.cardScore{
+  width: 50%;
+  min-height: 80px !important;
+  border-right: 1px solid black;
+  padding: .01px !important;
+}
