@@ -32,7 +32,7 @@ hideCanvas = () =>{
     show: false
   })
 }
-setSaved = () => {
+setSaved = (saved) => {
   this.setState({
     saved: saved
   })
