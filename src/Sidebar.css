@@ -1,16 +1,16 @@
 .canvas{
   width: 800px !important;
 }
-.card{
+.sidebarCard{
   margin-left: 10rem;
-  width: 300px !important;
+  width: 500px !important;
   height: 150px !important;
   margin-bottom: 10px;
 }
 .cardBody{
   padding: .01px !important;
 }
-.cardTitle{
+.sidebarCardTitle{
   display: flex;
   padding-left: 10px;
   padding-right: 10px;

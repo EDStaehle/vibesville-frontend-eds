@@ -13,7 +13,7 @@ export default class JobCard extends Component {
     return (
     <Card>
       <Card.Body>
-        <Card.Title>
+        <Card.Title className='jobCardTitle'>
           <div>
             <h2>{this.props.job.company}</h2>
             <h5>{this.props.job.title}</h5>
