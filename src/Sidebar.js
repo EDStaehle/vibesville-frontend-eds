@@ -5,7 +5,7 @@ import Offcanvas from 'react-bootstrap/Offcanvas';
 import './Sidebar.css'
 import { useAuth0, withAuth0 } from "@auth0/auth0-react";
 import axios from 'axios';
-
+import { Rating } from 'react-simple-star-rating'
 
 class Sidebar extends React.Component {
   async componentDidMount(){
@@ -39,7 +39,12 @@ class Sidebar extends React.Component {
           <p>VibesVille Score = this.state.score</p>
         </div>
         <div className='cardStars'>
-          <p>THIS MANY STARS</p>
+          <Rating
+          className='starRating'
+          allowFraction={true}
+          initialValue={d.user_score}
+          readonly={true}
+          />
         </div>
       </div>
       </Card.Text>
