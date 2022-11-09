@@ -49,6 +49,7 @@ class Main extends React.Component {
   };
 
   render() {
+    console.log(this.state.jobs)
     return (
       <div className="mainContain">
         <div className="hero-contain">

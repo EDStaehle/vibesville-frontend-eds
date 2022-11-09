@@ -21,8 +21,8 @@ class JobModal extends React.Component {
   handleJobSumbit = () => {
     let score = this.props.job.CityData ? [Math.round(this.props.job.CityData.categories[0].score_out_of_10),Math.round(this.props.job.CityData.categories[16].score_out_of_10),
     Math.round(this.props.job.CityData.categories[1].score_out_of_10), Math.round(this.props.job.CityData.categories[8].score_out_of_10), Math.round(this.props.job.CityData.categories[14].score_out_of_10)]
-    : null
-    let avgScore = score ? score.reduce((a,b) => a + b , 0) / score.length : 'No Data Found'
+    : 0
+    let avgScore = score !== 0 ? score.reduce((a,b) => a + b , 0) / score.length : 0
     let favoriteJob = {
       title: this.props.job.title,
       description: this.props.job.description,
@@ -35,11 +35,11 @@ class JobModal extends React.Component {
       longitude: this.props.job.longitude,
       user_id: this.props.auth0.user.email,
       user_score: this.state.rating,
-      housing_score: this.props.job.CityData ? Math.round(this.props.job.CityData.categories[0].score_out_of_10) : null,
-      COL_score: this.props.job.CityData ? Math.round(this.props.job.CityData.categories[1].score_out_of_10) : null,
-      health_score: this.props.job.CityData ? Math.round(this.props.job.CityData.categories[8].score_out_of_10) : null,
-      nature_score: this.props.job.CityData ? Math.round(this.props.job.CityData.categories[16].score_out_of_10) : null,
-      culture_score: this.props.job.CityData ? Math.round(this.props.job.CityData.categories[14].score_out_of_10) : null
+      housing_score: this.props.job.CityData ? Math.round(this.props.job.CityData.categories[0].score_out_of_10) : 0,
+      COL_score: this.props.job.CityData ? Math.round(this.props.job.CityData.categories[1].score_out_of_10) : 0,
+      health_score: this.props.job.CityData ? Math.round(this.props.job.CityData.categories[8].score_out_of_10) : 0,
+      nature_score: this.props.job.CityData ? Math.round(this.props.job.CityData.categories[16].score_out_of_10) : 0,
+      culture_score: this.props.job.CityData ? Math.round(this.props.job.CityData.categories[14].score_out_of_10) : 0
         }
     this.postFavJob(favoriteJob)
     this.props.onHide();

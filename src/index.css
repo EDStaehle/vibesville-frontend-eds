@@ -10,6 +10,8 @@ text-align: center;
 
 html {
   padding: 0rem !important;
+  height: auto;
+  overflow-y: none;
 }
 
 body {
