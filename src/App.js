@@ -1,3 +1,4 @@
+
 import React from 'react'
 import Main from './Main'
 import './App.css';
@@ -18,8 +19,8 @@ class App extends React.Component {
       stars: "",
       show: false,
       button: true,
-      updateCompleted: false
-    }
+      updateCompleted: false,
+    };
   }
 
   showCanvas = () => {
@@ -49,6 +50,7 @@ class App extends React.Component {
     }
   }
 
+
   setSaved = (saved) => {
     this.setState({
       saved: saved,
@@ -57,6 +59,14 @@ class App extends React.Component {
 
   setSavedNew = (newJob) => {
     this.setState({
+      saved: [...this.state.saved, newJob],
+    });
+  };
+  handlestopbtn = () => {
+    this.setState({
+      button: !this.state.button,
+    });
+  };
 
       saved: [...this.state.saved, newJob]
     })
@@ -81,6 +91,7 @@ class App extends React.Component {
       console.log(error.message)
     }
   }
+
 
   render() {
     return (
