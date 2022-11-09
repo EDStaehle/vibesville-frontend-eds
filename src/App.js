@@ -96,7 +96,6 @@ deleteSaved = async (id) => {
 }
 
   render() {
-    console.log(this.state.saved)
     return (
       <>
         <Router>
