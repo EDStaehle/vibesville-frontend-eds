@@ -3,7 +3,7 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import './Sidebar.css'
-import { useAuth0, withAuth0 } from "@auth0/auth0-react";
+import { withAuth0 } from "@auth0/auth0-react";
 import axios from 'axios';
 import { Rating } from 'react-simple-star-rating'
 
@@ -62,7 +62,6 @@ class Sidebar extends React.Component {
         Launch
       </Button> 
       }
-
       <Offcanvas className='canvas' show={this.props.show} onHide={this.props.hideCanvas} placement='end'>
         <Offcanvas.Header closeButton>
           <Offcanvas.Title>Saved Jobs</Offcanvas.Title>

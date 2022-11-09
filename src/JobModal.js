@@ -24,15 +24,15 @@ class JobModal extends React.Component {
     : 0
     let avgScore = score !== 0 ? score.reduce((a,b) => a + b , 0) / score.length : 0
     let favoriteJob = {
-      title: this.props.job.title,
-      description: this.props.job.description,
-      company: this.props.job.company,
-      redirect_url: this.props.job.redirect_url,
-      city: this.props.job.city,
+      title: this.props.job.title ? this.props.job.title : 'none',
+      description: this.props.job.description ? this.props.job.description : 'none',
+      company: this.props.job.company ? this.props.job.company : 'none',
+      redirect_url: this.props.job.redirect_url ? this.props.job.redirect_url : 'none',
+      city: this.props.job.city ? this.props.job.city : 'none',
       city_score: avgScore,
-      state: this.props.job.state,
-      latitude: this.props.job.latitude,
-      longitude: this.props.job.longitude,
+      state: this.props.job.state ? this.props.job.state : 'none',
+      latitude: this.props.job.latitude ? this.props.job.latitude : 0,
+      longitude: this.props.job.longitude ? this.props.job.longitude : 0,
       user_id: this.props.auth0.user.email,
       user_score: this.state.rating,
       housing_score: this.props.job.CityData ? Math.round(this.props.job.CityData.categories[0].score_out_of_10) : 0,
@@ -78,10 +78,10 @@ class JobModal extends React.Component {
             <div id='jobDescription'>
               <h4>Description</h4>
               <p>{this.props.job.description}</p>
-
             </div>
             <div id='cityVibeContainer'>
-            <h4>City Vibe Score = {avgScore}</h4>
+            <div id='cityVibeContainer'>
+              {avgScore === 'No Data Found' ? <h4>No Data Found</h4> : <h4>City Vibe Score = {avgScore} / 10</h4> }
                 {this.props.job.CityData ?
                 <ul>
                   <li>Housing Rating = {Math.round(this.props.job.CityData.categories[0].score_out_of_10)}</li>
@@ -90,10 +90,9 @@ class JobModal extends React.Component {
                   <li>Nature Vibes = {Math.round(this.props.job.CityData.categories[16].score_out_of_10)}</li>
                   <li>Leisure and Culture = {Math.round(this.props.job.CityData.categories[14].score_out_of_10)}</li>
                 </ul>
-                  :<p>No Data Found</p>}
-                {/* <div className='summary'>
-                  {this.props.job.CityData ? this.props.job.CityData.summary : <p>No Data Found</p>}
-                </div> */}
+                  :null
+              }
+            </div>
               {
                 this.props.auth0.isAuthenticated ? 
               <div>

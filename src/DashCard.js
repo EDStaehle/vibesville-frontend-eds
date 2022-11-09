@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import axios from 'axios';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import { Rating } from 'react-simple-star-rating'
@@ -70,7 +69,6 @@ export default class DashCard extends Component {
                       <Rating
                         className='starRating'
                         onClick={this.handleRating}
-
                         size={70}
                         transition={true}
                         allowFraction={true} />
