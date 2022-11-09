@@ -9,27 +9,44 @@ export default class Header extends Component {
     return (
       <>
         {[false].map((expand) => (
-          <Navbar key={expand} bg="light" expand={false} className="mb-3">
+          <Navbar key={expand} expand={false} className="mb-3">
             <Container fluid>
-              <Navbar.Brand>VibesVille</Navbar.Brand>
+              <Navbar.Brand>
+                <img
+                  src= '/vibe_light.png'
+                  width="400"
+                  // height="30"
+                  // className="d-inline-block align-top"
+                  alt="Vibesville logo"
+                />
+              </Navbar.Brand>
               <Navbar.Toggle />
-              <Navbar.Offcanvas
-                placement="start"
-              >
+              <Navbar.Offcanvas placement="start">
                 <Offcanvas.Header closeButton>
-                  <Offcanvas.Title >Navigation</Offcanvas.Title>
+                  <Offcanvas.Title>Navigation</Offcanvas.Title>
                 </Offcanvas.Header>
                 <Offcanvas.Body>
-                  <NavItem><Link to="/" className="nav-link">Home</Link></NavItem>
-                  <NavItem><Link to="/Dashboard" className="nav-link">Dashboard</Link></NavItem>
-                  <NavItem><Link to="/about" className="nav-link">About</Link></NavItem>
-
+                  <NavItem>
+                    <Link to="/" className="nav-link">
+                      Home
+                    </Link>
+                  </NavItem>
+                  <NavItem>
+                    <Link to="/Dashboard" className="nav-link">
+                      Dashboard
+                    </Link>
+                  </NavItem>
+                  <NavItem>
+                    <Link to="/about" className="nav-link">
+                      About
+                    </Link>
+                  </NavItem>
                 </Offcanvas.Body>
               </Navbar.Offcanvas>
             </Container>
           </Navbar>
         ))}
       </>
-    )
+    );
   }
 }

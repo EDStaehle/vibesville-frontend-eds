@@ -10,7 +10,13 @@ Form {
   width: 40%;
   font-size: 1rem;
   line-height: 1.5;
-  padding: .375rem 2.25rem .375rem .75rem;
+  padding: .375rem .75rem .375rem .75rem;
   background-color: aliceblue;
   text-align: center;
+}
+
+.search button {
+  display: flex;
+  justify-content: space-between;
+  gap: 1vw;
 }

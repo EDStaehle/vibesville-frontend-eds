@@ -68,7 +68,7 @@ handlestopbtn = () => {
               <div>
                 {this.props.auth0.isAuthenticated ?
                   <>
-                    <Profile />
+                    {/* <Profile /> */}
                     <Logout />
                     <Sidebar
                       setSaved={this.setSaved}
