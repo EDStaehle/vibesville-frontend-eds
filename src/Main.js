@@ -23,7 +23,9 @@ class Main extends React.Component {
       jobTitle: e.target.value
     })
   }
-
+componentDidMount(){
+  this.props.button();
+}
 
   getJobData= async (e) => {
     e.preventDefault();

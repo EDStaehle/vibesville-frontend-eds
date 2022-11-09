@@ -53,9 +53,12 @@ class Sidebar extends React.Component {
     ))
     return (
       <>
+      {
+        this.props.button? null:
       <Button variant="primary" onClick={this.props.showCanvas}>
         Launch
-      </Button>
+      </Button> 
+      }
 
       <Offcanvas className='canvas' show={this.props.show} onHide={this.props.hideCanvas} placement='end'>
         <Offcanvas.Header closeButton>

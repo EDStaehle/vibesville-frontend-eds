@@ -4,6 +4,9 @@ import './App.css';
 import Login from './components/Login';
 import Logout from './components/Logout';
 import Profile from './components/Profile';
+import Header from './Header';
+import Dashboard from './Dashboard';
+import About from './About';
 // browser routes
 // import {
 //   BrowserRouter as Router,
@@ -15,6 +18,7 @@ import Profile from './components/Profile';
 import Sidebar from './Sidebar';
 // import { DEFAULT_BREAKPOINTS } from 'react-bootstrap/esm/ThemeProvider';
 import { withAuth0 } from '@auth0/auth0-react';
+import JobCard from './JobCard';
 
 
 class App extends React.Component {
@@ -23,7 +27,8 @@ class App extends React.Component {
     this.state = {
       saved: [],
       stars: '',
-      show: false
+      show: false,
+      button: true
     }
   }
 
@@ -48,42 +53,60 @@ class App extends React.Component {
       saved: [...this.state.saved, newJob]
     })
   }
-
+handlestopbtn = () => {
+  this.setState({
+    button: !this.state.button
+  })
+}
   render() {
     console.log(this.state.saved)
     return (
       <>
-        {/* <Router>
+        <Router>
+          <Header />
+              <div>
+                {this.props.auth0.isAuthenticated ?
+                  <>
+                    <Profile />
+                    <Logout />
+                    <Sidebar
+                      setSaved={this.setSaved}
+                      saved={this.state.saved}
+                      favs={this.state.stars}
+                      show={this.state.show}
+                      showCanvas={this.showCanvas}
+                      hideCanvas={this.hideCanvas}
+                      button={this.state.button}
+                    />
+                  </>
+                  :
+                  <Login />}
+                
+              </div>
           <div>
             
             <Routes>
               <Route
+                 exact path="/"
+                element={<Main
+                button={this.handlestopbtn}
+                setSaved={this.setSavedNew}
+                />}
               >
               </Route>
-              <Route>
-              </Route>
-            </Routes>
-          </div> */}
-          <div>
-            {this.props.auth0.isAuthenticated ?
-              <>
-                <Profile />
-                <Logout />
-                <Sidebar
+              <Route
+                 exact path="/dashboard"
+                 element={<Dashboard 
+                  button={this.handlestopbtn}
                   setSaved={this.setSaved}
                   saved={this.state.saved}
                   favs={this.state.stars}
-                  data={this.state.data}
-                  show={this.state.show}
-                  showCanvas={this.showCanvas}
-                  hideCanvas={this.hideCanvas}
-                />
-              </>
-              :
-              <Login />}
-            <Main setSaved={this.setSavedNew}/>
+                 />}
+              >
+              </Route>
+            </Routes>
           </div>
-        {/* </Router> */}
+        </Router>
       </>
     )
   }
