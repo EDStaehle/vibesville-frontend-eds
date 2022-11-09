@@ -134,6 +134,7 @@ deleteSaved = async (id) => {
                  exact path="/dashboard"
                  element={<Dashboard 
                   updateCompleted={this.state.updateCompleted}
+                  deleteSaved={this.deleteSaved}
                   updateCard={this.updateCard}
                   button={this.handlestopbtn}
                   setSaved={this.setSaved}
