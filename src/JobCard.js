@@ -1,11 +1,5 @@
 import React, { Component } from "react";
-import {
-  Card,
-  Row,
-  Col,
-  ListGroup,
-  Button
-} from "react-bootstrap";
+import { Card, Row, Col, ListGroup, Button } from "react-bootstrap";
 import "./JobCard.css";
 
 export default class JobCard extends Component {
@@ -45,7 +39,6 @@ export default class JobCard extends Component {
           <Row>
             <Col className="col1">
               <h4>Description</h4>
-
             </Col>
             <Col className="col2">
               <h4>City Vibe Score = {avgScore} / 10</h4>
@@ -100,3 +93,5 @@ export default class JobCard extends Component {
         </Card.Body>
       </Card>
     );
+  }
+}
