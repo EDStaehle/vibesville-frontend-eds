@@ -1,4 +1,3 @@
-
 import React from 'react'
 import Main from './Main'
 import './App.css';
@@ -50,7 +49,6 @@ class App extends React.Component {
     }
   }
 
-
   setSaved = (saved) => {
     this.setState({
       saved: saved,
@@ -68,15 +66,6 @@ class App extends React.Component {
     });
   };
 
-      saved: [...this.state.saved, newJob]
-    })
-  }
-
-  handlestopbtn = () => {
-    this.setState({
-      button: !this.state.button
-    })
-  }
 
   deleteSaved = async (id) => {
     try {
