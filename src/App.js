@@ -9,26 +9,21 @@ import Dashboard from './Dashboard';
 import About from './About';
 import axios from 'axios';
 
+
 // browser routes
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route
-} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-
-import Sidebar from './Sidebar';
+import Sidebar from "./Sidebar";
 // import { DEFAULT_BREAKPOINTS } from 'react-bootstrap/esm/ThemeProvider';
-import { withAuth0 } from '@auth0/auth0-react';
-import JobCard from './JobCard';
-
+import { withAuth0 } from "@auth0/auth0-react";
+import JobCard from "./JobCard";
 
 class App extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       saved: [],
-      stars: '',
+      stars: "",
       show: false,
       button: true,
       updateCompleted: false
@@ -37,9 +32,9 @@ class App extends React.Component {
 
   showCanvas = () => {
     this.setState({
-      show: true
-    })
-  }
+      show: true,
+    });
+  };
   hideCanvas = () => {
     this.setState({
       show: false
@@ -64,14 +59,16 @@ class App extends React.Component {
       console.log(error.message);
     }
    }
+
   setSaved = (saved) => {
     this.setState({
-      saved: saved
-    })
-  }
+      saved: saved,
+    });
+  };
 
   setSavedNew = (newJob) => {
     this.setState({
+
       saved: [...this.state.saved, newJob]
     })
   }
@@ -100,7 +97,8 @@ deleteSaved = async (id) => {
       <>
         <Router>
           <Header />
-              <div>
+          <div className="login-nav">
+            <div className="auth-buttons">
                 {this.props.auth0.isAuthenticated ?
                   <>
                     {/* <Profile /> */}
@@ -118,9 +116,9 @@ deleteSaved = async (id) => {
                   </>
                   :
                   <Login />}
-                
-              </div>
-          <div>
+            </div>
+          </div>
+       
             
             <Routes>
               <Route
@@ -144,14 +142,13 @@ deleteSaved = async (id) => {
                 />}
               >
               </Route>
+
             </Routes>
-          </div>
+          
         </Router>
       </>
-    )
+    );
   }
 }
 
 export default withAuth0(App);
-
-

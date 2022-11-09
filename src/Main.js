@@ -1,87 +1,83 @@
-import React from 'react'
-import JobCard from './JobCard'
-import axios from 'axios';
-import JobModal from './JobModal'
-import './Main.css'
-import { withAuth0 } from '@auth0/auth0-react';
-import { Form ,Button, Spinner } from 'react-bootstrap';
-
+import React from "react";
+import JobCard from "./JobCard";
+import axios from "axios";
+import JobModal from "./JobModal";
+import "./Main.css";
+import { withAuth0 } from "@auth0/auth0-react";
+import { Form, Button, Spinner } from "react-bootstrap";
 
 class Main extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      jobTitle: '',
+      jobTitle: "",
       jobs: [],
-      selectedJob: '',
-      isLoading: false
-    }
+      selectedJob: "",
+      isLoading: false,
+    };
   }
 
   handleInput = (e) => {
     e.preventDefault();
-    console.log(e.target.value)
+    console.log(e.target.value);
     this.setState({
-      jobTitle: e.target.value
-    })
+      jobTitle: e.target.value,
+    });
+  };
+  componentDidMount() {
+    this.props.button();
   }
-componentDidMount(){
-  this.props.button();
-}
 
-  getJobData= async (e) => {
+  getJobData = async (e) => {
     e.preventDefault();
-    this.setState({isLoading: true})
+    this.setState({ isLoading: true });
     try {
-
-      let url = `https://vibesville.herokuapp.com/jobs?jobQuery=${this.state.jobTitle}`
+      let url = `https://vibesville.herokuapp.com/jobs?jobQuery=${this.state.jobTitle}`;
 
       let jobs = await axios.get(url);
       this.setState({
         jobs: jobs.data,
-        isLoading: false
+        isLoading: false,
       });
-      
-    } catch(error){
-      this.setState({
-      })
-    }}
-
-    openModal = (job) => {
-      this.setState({selectedJob: job, modalDisplay: true})
+    } catch (error) {
+      this.setState({});
     }
+  };
+
+  openModal = (job) => {
+    this.setState({ selectedJob: job, modalDisplay: true });
+  };
 
   render() {
     return (
       <div className="mainContain">
-        <header>
-          <img
-            src="https://via.placeholder.com/800x400/"
-            alt="placeholder"
-          ></img>
-          <h1>VibesVille</h1>
-        </header>
-        <div className="search">
-          <Form onSubmit={this.getJobData} id="form">
-            <input
-              placeholder="Search Jobs Now!"
-              type="search"
-              name="search"
-              onChange={this.handleInput}
-            />
-            {/* <Button type="submit">Vibe Check!</Button> */}
-            <Button type = "submit" variant="primary" >
-              Vibe Check!
-              {this.state.isLoading ? <Spinner
-                as="span"
-                animation="border"
-                size="sm"
-                role="status"
-                aria-hidden="true"
-              /> : false}
-              {/* <span className="visually-hidden">Loading...</span> */}
-            </Button>
-          </Form>
+        <div className="hero-contain">
+          <h1>Find your balance, find your <span>Vibe</span>.</h1>
+          <div className="search">
+            <Form onSubmit={this.getJobData} id="form">
+              <input
+                placeholder="Search Jobs Now!"
+                type="search"
+                name="search"
+                onChange={this.handleInput}
+              />
+              <Button type="submit" variant="primary">
+                Vibe Check!
+                {this.state.isLoading ? (
+                  <Spinner
+                    as="span"
+                    animation="border"
+                    size="sm"
+                    role="status"
+                    aria-hidden="true"
+                  />
+                ) : (
+                  false
+                )}
+                {/* <span className="visually-hidden">Loading...</span> */}
+              </Button>
+            </Form>
+          </div>
         </div>
         <div>
           {this.state.jobs

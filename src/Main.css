@@ -5,9 +5,12 @@ Form {
   gap: 1vw;
 }
 
+.search {
+  width: 40%;
+}
 .search input {
   border-radius: 0.375rem;
-  width: 40%;
+  width: 100%;
   font-size: 1rem;
   line-height: 1.5;
   padding: .375rem .75rem .375rem .75rem;
@@ -19,4 +22,26 @@ Form {
   display: flex;
   justify-content: space-between;
   gap: 1vw;
+}
+
+.mainContain {
+  padding: 0rem !important;
+}
+.hero-contain {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)), url('/public/home_desk.jpg');
+  height: 33rem;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-content: center;
+}
+
+.hero-contain h1 {
+  font-size: 5rem;
+  color: #80ED99;
+  width: 50%;
 }

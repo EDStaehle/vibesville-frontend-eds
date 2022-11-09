@@ -9,7 +9,7 @@ export default class Header extends Component {
     return (
       <>
         {[false].map((expand) => (
-          <Navbar key={expand} expand={false} className="mb-3">
+          <Navbar key={expand} expand={false} >
             <Container fluid>
               <Navbar.Brand>
                 <img
