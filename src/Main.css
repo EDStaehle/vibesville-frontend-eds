@@ -45,3 +45,11 @@ Form {
   color: #80ED99;
   width: 50%;
 }
+
+.job-list {
+  margin-top: 1vw;
+  margin-bottom: 1vw;
+  display: flex;
+  flex-direction: column;
+  gap: 1vw;
+}
