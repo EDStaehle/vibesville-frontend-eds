@@ -22,7 +22,7 @@ import "./About.css";
           <img src='' alt=''/>
           <div className='container'>
             <h2>Elias Staehle</h2>
-            <p>bio of team member here. Lorem ipsum ipsum</p>
+            <p>My name is Elias Staehle. I am 24 years old and a USMC vet that is training to become a full stack developer at code fellows.</p>
           </div>
         </div>
         <div className='Namecard'>
