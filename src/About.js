@@ -38,11 +38,10 @@ import "./About.css";
             <h2>Raphael Chookagian</h2>
             <p> Hello! My name is Raphael Chookagian. I am a student at Code Fellows full-stack JavaScript program. I have been a commercial photographer for the past decade and am now transitioning into web development. <br />
             Born in Rio de Janeiro, Brazil. U.S. Army combat veteran, certified personal trainer and fashion photographer. Well versed in working internationally within teams and solo to accomplish set objectives. <br />
-            You can find me on
+            You can find me on <br />
             <a href="https://www.linkedin.com/in/raphaelchookagian/">
               Linkedin
-            </a>
-            and <a href="https://github.com/cesarderio"> GitHub</a>. <br />
+            </a>&<a href="https://github.com/cesarderio"> GitHub</a>. <br />
             Thank you for checking out our project!</p>
           </div>
         </div>
