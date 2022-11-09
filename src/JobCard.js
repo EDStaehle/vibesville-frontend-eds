@@ -1,11 +1,5 @@
 import React, { Component } from "react";
-import {
-  Card,
-  Row,
-  Col,
-  ListGroup,
-  Button
-} from "react-bootstrap";
+import { Card, Row, Col, ListGroup, Button } from "react-bootstrap";
 import "./JobCard.css";
 
 export default class JobCard extends Component {
@@ -45,7 +39,6 @@ export default class JobCard extends Component {
           <Row>
             <Col className="col1">
               <h4>Description</h4>
-
             </Col>
             <Col className="col2">
               <h4>City Vibe Score = {avgScore} / 10</h4>
@@ -61,31 +54,31 @@ export default class JobCard extends Component {
                 {this.props.job.CityData ? (
                   <ListGroup>
                     <ListGroup.Item>
-                      Housing Rating ={" "}
+                      Housing Rating
                       {Math.round(
                         this.props.job.CityData.categories[0].score_out_of_10
                       )}
                     </ListGroup.Item>
                     <ListGroup.Item>
-                      Cost of Living Rating ={" "}
+                      Cost of Living Rating
                       {Math.round(
                         this.props.job.CityData.categories[1].score_out_of_10
                       )}
                     </ListGroup.Item>
                     <ListGroup.Item>
-                      Health Care Rating ={" "}
+                      Health Care Rating
                       {Math.round(
                         this.props.job.CityData.categories[8].score_out_of_10
                       )}
                     </ListGroup.Item>
                     <ListGroup.Item>
-                      Nature Vibes ={" "}
+                      Nature Vibes
                       {Math.round(
                         this.props.job.CityData.categories[16].score_out_of_10
                       )}
                     </ListGroup.Item>
                     <ListGroup.Item>
-                      Leisure and Culture ={" "}
+                      Leisure and Culture
                       {Math.round(
                         this.props.job.CityData.categories[14].score_out_of_10
                       )}
@@ -100,3 +93,5 @@ export default class JobCard extends Component {
         </Card.Body>
       </Card>
     );
+  }
+}
