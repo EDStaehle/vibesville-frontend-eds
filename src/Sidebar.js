@@ -18,6 +18,8 @@ class Sidebar extends React.Component {
     }
   }
 
+
+
   render() {
     let data = this.props.saved.map((d) => (
       <Card key={d.title} className='sidebarCard'>
@@ -31,12 +33,12 @@ class Sidebar extends React.Component {
             </h2>
             <h2>{d.company}</h2>
           </div>
-          
+          <div id='buttonDiv'><Button onClick={() => {this.props.deleteJob(d._id)}} id='deleteJob' variant="danger">Delete</Button></div>
           </Card.Title>
       <Card.Text>
       <div className='cardContainer'>
         <div className='cardScore'>
-          <p>VibesVille Score = this.state.score</p>
+          <p>VibesVille Score = {d.city_score}</p>
         </div>
         <div className='cardStars'>
           <Rating
