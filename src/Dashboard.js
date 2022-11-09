@@ -21,7 +21,7 @@ class Dashboard extends React.Component {
 
   render() {
     let data = this.props.saved.map((d) => (
-      <Card key={d.title} className='dashboardCard'>
+      <Card key={d._id} className='dashboardCard'>
         <Card.Body className='dashCardBody'>
           <Card.Title>
             <div className='dashCardTitle'>
@@ -58,7 +58,7 @@ class Dashboard extends React.Component {
     return (
       <>
         {
-          this.props.auth0.isAuthenticated? {data}: <p>please login</p>
+           this.props.auth0.isAuthenticated? <div> {data} </div>: <p>please login</p>
         }
 
       </>
