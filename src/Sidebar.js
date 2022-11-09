@@ -18,37 +18,40 @@ class Sidebar extends React.Component {
     }
   }
 
+
+
   render() {
-    let data = this.props.saved.map((d) => (
-      <Card key={d.title} className='sidebarCard'>
-      <Card.Body className='cardBody'>
-        <Card.Title>
-          <div className='sidebarCardTitle'>
-            <h2>{d.title}
-            <div className='cardCity'>
-              <h6>{d.city}</h6>
+    let sorted = this.props.saved.sort((a,b) => b.user_score - a.user_score)
+    let data = sorted.map((d,idx) => (
+      <Card key={idx} className='sidebarCard'>
+        <Card.Body className='cardBody'>
+          <Card.Title>
+            <div className='sidebarCardTitle'>
+              <h2>{d.title}
+                <div className='cardCity'>
+                  <h6>{d.city}</h6>
+                </div>
+              </h2>
+              <h2>{d.company}</h2>
             </div>
-            </h2>
-            <h2>{d.company}</h2>
-          </div>
-          
+            <div id='buttonDiv'><Button onClick={() => { this.props.deleteJob(d._id) }} id='deleteJob' variant="danger">Delete</Button></div>
           </Card.Title>
-      <Card.Text>
-      <div className='cardContainer'>
-        <div className='cardScore'>
-          <p>VibesVille Score = this.state.score</p>
-        </div>
-        <div className='cardStars'>
-          <Rating
-          className='starRating'
-          allowFraction={true}
-          initialValue={d.user_score}
-          readonly={true}
-          />
-        </div>
-      </div>
-      </Card.Text>
-      </Card.Body>
+          <Card.Text>
+            <div className='cardContainer'>
+              <div className='cardScore'>
+                <p>VibesVille Score = {d.city_score}</p>
+              </div>
+              <div className='cardStars'>
+                <Rating
+                  className='starRating'
+                  allowFraction={true}
+                  initialValue={d.user_score}
+                  readonly={true}
+                />
+              </div>
+            </div>
+          </Card.Text>
+        </Card.Body>
       </Card>
     ))
     return (

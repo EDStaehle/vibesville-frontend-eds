@@ -1,12 +1,14 @@
-import React from "react";
-import Main from "./Main";
-import "./App.css";
-import Login from "./components/Login";
-import Logout from "./components/Logout";
-import Profile from "./components/Profile";
-import Header from "./Header";
-import Dashboard from "./Dashboard";
-import About from "./About";
+import React from 'react'
+import Main from './Main'
+import './App.css';
+import Login from './components/Login';
+import Logout from './components/Logout';
+import Profile from './components/Profile';
+import Header from './Header';
+import Dashboard from './Dashboard';
+import About from './About';
+import axios from 'axios';
+
 
 // browser routes
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -24,7 +26,8 @@ class App extends React.Component {
       stars: "",
       show: false,
       button: true,
-    };
+      updateCompleted: false
+    }
   }
 
   showCanvas = () => {
@@ -34,9 +37,29 @@ class App extends React.Component {
   };
   hideCanvas = () => {
     this.setState({
-      show: false,
-    });
-  };
+      show: false
+    })
+  }
+  updateCard = async (itemToUpdate) => {
+
+    try{
+      let url = `https://vibesville.herokuapp.com/saved/${itemToUpdate._id}`
+      let updateditem = await axios.put(url, itemToUpdate);
+
+      let updateditemArray = this.state.saved.map(existingItem => {
+        return existingItem._id === itemToUpdate._id 
+        ? updateditem.data
+        : existingItem
+      });
+      this.setState({saved: updateditemArray, updateCompleted: true})
+       
+
+
+    }catch (error) {
+      console.log(error.message);
+    }
+   }
+
   setSaved = (saved) => {
     this.setState({
       saved: saved,
@@ -45,65 +68,81 @@ class App extends React.Component {
 
   setSavedNew = (newJob) => {
     this.setState({
-      saved: [...this.state.saved, newJob],
-    });
-  };
-  handlestopbtn = () => {
+
+      saved: [...this.state.saved, newJob]
+    })
+  }
+handlestopbtn = () => {
+  this.setState({
+    button: !this.state.button
+  })
+}
+
+deleteSaved = async (id) => {
+  try {
+    await axios.delete(`https://vibesville.herokuapp.com/saved/${id}`)
+
+    let updatedSaved = this.state.saved.filter(job => job._id !== id)
+
     this.setState({
-      button: !this.state.button,
-    });
-  };
+      saved: updatedSaved
+    })
+  } catch (error) {
+    console.log(error.message)
+  }
+}
+
   render() {
-    console.log(this.state.saved);
     return (
       <>
         <Router>
           <Header />
           <div className="login-nav">
             <div className="auth-buttons">
-              {this.props.auth0.isAuthenticated ? (
-                <>
-                  {/* <Profile /> */}
-                  <Logout />
-                  <Sidebar
-                    setSaved={this.setSaved}
-                    saved={this.state.saved}
-                    favs={this.state.stars}
-                    show={this.state.show}
-                    showCanvas={this.showCanvas}
-                    hideCanvas={this.hideCanvas}
-                    button={this.state.button}
-                  />
-                </>
-              ) : (
-                <Login />
-              )}
+                {this.props.auth0.isAuthenticated ?
+                  <>
+                    {/* <Profile /> */}
+                    <Logout />
+                    <Sidebar
+                      setSaved={this.setSaved}
+                      saved={this.state.saved}
+                      favs={this.state.stars}
+                      show={this.state.show}
+                      showCanvas={this.showCanvas}
+                      hideCanvas={this.hideCanvas}
+                      button={this.state.button}
+                      deleteJob={this.deleteSaved}
+                    />
+                  </>
+                  :
+                  <Login />}
             </div>
           </div>
        
+            
             <Routes>
               <Route
-                exact
-                path="/"
-                element={
-                  <Main
-                    button={this.handlestopbtn}
-                    setSaved={this.setSavedNew}
-                  />
-                }
-              ></Route>
+                exact path="/"
+                element={<Main
+                button={this.handlestopbtn}
+                setSaved={this.setSavedNew}
+                />}
+              >
+              </Route>
               <Route
-                exact
-                path="/dashboard"
-                element={
-                  <Dashboard
-                    button={this.handlestopbtn}
-                    setSaved={this.setSaved}
-                    saved={this.state.saved}
-                    favs={this.state.stars}
-                  />
-                }
-              ></Route>
+
+                 exact path="/dashboard"
+                 element={<Dashboard 
+                  updateCompleted={this.state.updateCompleted}
+                  updateCard={this.updateCard}
+                  button={this.handlestopbtn}
+                  setSaved={this.setSaved}
+                  saved={this.state.saved}
+                  favs={this.state.stars}
+                />}
+              >
+              </Route>
+
             </Routes>
           
         </Router>
