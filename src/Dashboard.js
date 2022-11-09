@@ -29,6 +29,7 @@ constructor(props){
     console.log(this.props.saved)
     let data = this.props.saved.map((d) => (
       <DashCard
+      deleteSaved={this.props.deleteSaved}
       updateCompleted={this.props.updateCompleted}
       updateCard={this.props.updateCard}
       key={d._id}
