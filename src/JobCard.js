@@ -54,31 +54,31 @@ export default class JobCard extends Component {
                 {this.props.job.CityData ? (
                   <ListGroup>
                     <ListGroup.Item>
-                      Housing Rating
+                      Housing Rating ={" "}
                       {Math.round(
                         this.props.job.CityData.categories[0].score_out_of_10
                       )}
                     </ListGroup.Item>
                     <ListGroup.Item>
-                      Cost of Living Rating
+                      Cost of Living Rating ={" "}
                       {Math.round(
                         this.props.job.CityData.categories[1].score_out_of_10
                       )}
                     </ListGroup.Item>
                     <ListGroup.Item>
-                      Health Care Rating
+                      Health Care Rating ={" "}
                       {Math.round(
                         this.props.job.CityData.categories[8].score_out_of_10
                       )}
                     </ListGroup.Item>
                     <ListGroup.Item>
-                      Nature Vibes
+                      Nature Vibes ={" "}
                       {Math.round(
                         this.props.job.CityData.categories[16].score_out_of_10
                       )}
                     </ListGroup.Item>
                     <ListGroup.Item>
-                      Leisure and Culture
+                      Leisure and Culture ={" "}
                       {Math.round(
                         this.props.job.CityData.categories[14].score_out_of_10
                       )}
