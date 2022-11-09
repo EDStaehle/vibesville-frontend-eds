@@ -1,0 +1,43 @@
+.navbar-toggler{
+  position: fixed;
+  left: 1rem;
+}
+.navbar-brand{
+  position: relative;
+  left: 5rem;
+}
+.navbar{
+  display:  flex !important;
+}
+.navbar-brand{
+  display: block;
+  font-size: 300% !important;
+}
+.nav-item{
+  display: flex !important;
+  width: 100%;
+  height:  auto;
+  margin-left: 100px !important;
+}
+.nav-link {
+  color:white;
+  display: flex;
+  justify-content: space-around;
+  font-size: 100% !important;
+  
+  }
+  
+  .nav-link:visited {
+    color:rgb(6, 6, 6);
+    
+    }
+  
+    .nav-link:hover{
+      color:rgb(0, 162, 255);
+      
+      }
+  
+      .nav-link:visited:hover {
+        color:rgb(0, 162, 255);
+        
+        }
