@@ -8,16 +8,19 @@ nav {
   background-color:#80ED99 !important;
 }
 .navbar-brand{
-  /* position: relative;
-  left: 5rem; */
+  margin-right: none !important;
 }
 .navbar{
   display:  flex !important;
   background-color: #38A3A5 !important;
+  position: relative;
+  height: 8rem;
 }
 .navbar-brand{
   display: block;
   font-size: 300% !important;
+  position: absolute;
+  left: 35%;
 }
 .nav-item{
   display: flex !important;
