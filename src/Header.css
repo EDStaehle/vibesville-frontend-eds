@@ -1,28 +1,36 @@
+nav {
+  background-color:#38A3A5 ;
+}
+
 .navbar-toggler{
   position: fixed;
-  left: 1rem;
+  left: 3rem;
+  background-color:#80ED99 !important;
 }
 .navbar-brand{
-  position: relative;
-  left: 5rem;
+  margin-right: none !important;
 }
 .navbar{
   display:  flex !important;
+  background-color: #38A3A5 !important;
+  position: relative;
+  height: 8rem;
 }
 .navbar-brand{
   display: block;
   font-size: 300% !important;
+  position: absolute;
+  left: 35%;
 }
 .nav-item{
   display: flex !important;
   width: 100%;
   height:  auto;
-  margin-left: 100px !important;
 }
 .nav-link {
   color:white;
   display: flex;
-  justify-content: space-around;
+  /* justify-content: space-around; */
   font-size: 100% !important;
   
   }
