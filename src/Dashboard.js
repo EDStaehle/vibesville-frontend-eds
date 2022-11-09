@@ -33,7 +33,7 @@ constructor(props){
       updateCompleted={this.props.updateCompleted}
       updateCard={this.props.updateCard}
       key={d._id}
-      saved={this.state.cardSaved}
+      saved={this.props.saved}
       setSaved={this.props.setSaved}
       d={d}/>
     ))
