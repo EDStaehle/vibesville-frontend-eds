@@ -79,7 +79,7 @@ class Main extends React.Component {
             </Form>
           </div>
         </div>
-        <div>
+        <div className="job-list">
           {this.state.jobs
             ? this.state.jobs.map((job,idx) => {
                 return (
