@@ -143,6 +143,10 @@ deleteSaved = async (id) => {
                 />}
               >
               </Route>
+              <Route>
+                exact path="/about"
+                element={<About />}
+              </Route>
 
             </Routes>
           
