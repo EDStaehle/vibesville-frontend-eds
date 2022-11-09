@@ -75,16 +75,15 @@ class Main extends React.Component {
                 ) : (
                   false
                 )}
-                {/* <span className="visually-hidden">Loading...</span> */}
               </Button>
             </Form>
           </div>
         </div>
         <div>
           {this.state.jobs
-            ? this.state.jobs.map((job) => {
+            ? this.state.jobs.map((job,idx) => {
                 return (
-                  <JobCard job={job} modalOpen={this.openModal} key={job._id} />
+                  <JobCard job={job} modalOpen={this.openModal} key={idx} />
                 );
               })
             : null}

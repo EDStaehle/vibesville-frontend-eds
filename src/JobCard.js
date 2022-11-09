@@ -34,7 +34,7 @@ export default class JobCard extends Component {
               <button onClick={this.openModal}>View More</button>
             </div>
             <div id='cityVibeContainer'>
-              <h4>City Vibe Score = {avgScore} / 10</h4>
+              {avgScore === 'No Data Found' ? <h4>No Data Found</h4> : <h4>City Vibe Score = {avgScore} / 10</h4> }
                 {this.props.job.CityData ?
                 <ul>
                   <li>Housing Rating = {Math.round(this.props.job.CityData.categories[0].score_out_of_10)}</li>
@@ -43,7 +43,7 @@ export default class JobCard extends Component {
                   <li>Nature Vibes = {Math.round(this.props.job.CityData.categories[16].score_out_of_10)}</li>
                   <li>Leisure and Culture = {Math.round(this.props.job.CityData.categories[14].score_out_of_10)}</li>
                 </ul>
-                  :<p>No Data Found</p>
+                  :null
               }
             </div>
           </div>
