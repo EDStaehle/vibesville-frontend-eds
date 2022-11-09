@@ -9,6 +9,7 @@ import axios from 'axios';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Sidebar from "./Sidebar";
 import { withAuth0 } from "@auth0/auth0-react";
+import About from './About'
 
 class App extends React.Component {
   constructor(props) {
@@ -129,6 +130,7 @@ class App extends React.Component {
               />}
             >
             </Route>
+            <Route exact path="/about" element={<About />}></Route>
           </Routes>
         </Router>
       </>
