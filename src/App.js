@@ -30,7 +30,8 @@ class App extends React.Component {
       saved: [],
       stars: '',
       show: false,
-      button: true
+      button: true,
+      updateCompleted: false
     }
   }
 
@@ -44,6 +45,25 @@ class App extends React.Component {
       show: false
     })
   }
+  updateCard = async (itemToUpdate) => {
+
+    try{
+      let url = `https://vibesville.herokuapp.com/saved/${itemToUpdate._id}`
+      let updateditem = await axios.put(url, itemToUpdate);
+
+      let updateditemArray = this.state.saved.map(existingItem => {
+        return existingItem._id === itemToUpdate._id 
+        ? updateditem.data
+        : existingItem
+      });
+      this.setState({saved: updateditemArray, updateCompleted: true})
+       
+
+
+    }catch (error) {
+      console.log(error.message);
+    }
+   }
   setSaved = (saved) => {
     this.setState({
       saved: saved
@@ -113,8 +133,11 @@ deleteSaved = async (id) => {
               >
               </Route>
               <Route
-                exact path="/dashboard"
-                element={<Dashboard 
+
+                 exact path="/dashboard"
+                 element={<Dashboard 
+                  updateCompleted={this.state.updateCompleted}
+                  updateCard={this.updateCard}
                   button={this.handlestopbtn}
                   setSaved={this.setSaved}
                   saved={this.state.saved}
