@@ -7,13 +7,14 @@ import Profile from './components/Profile';
 import Header from './Header';
 import Dashboard from './Dashboard';
 import About from './About';
+
 // browser routes
-// import {
-//   BrowserRouter as Router,
-//   Routes,
-//   Route
-// } from "react-router-dom";
-// import BestJobs from './components/BestJobs';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route
+} from "react-router-dom";
+
 
 import Sidebar from './Sidebar';
 // import { DEFAULT_BREAKPOINTS } from 'react-bootstrap/esm/ThemeProvider';

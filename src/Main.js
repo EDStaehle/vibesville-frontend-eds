@@ -4,6 +4,7 @@ import axios from 'axios';
 import JobModal from './JobModal'
 import './Main.css'
 import { withAuth0 } from '@auth0/auth0-react';
+import { Form ,Button } from 'react-bootstrap';
 
 
 class Main extends React.Component {
@@ -55,12 +56,16 @@ componentDidMount(){
           <img src='https://via.placeholder.com/800x400/' alt='placeholder'></img>
           <h1>VibesVille</h1>
         </header>
-        <div id='searchBar'>
-          <form onSubmit={this.getJobData} id='form'>
-              <label > Search Jobs Now!</label>
-              <input type="text" onInput={this.handleInput}/>
-              <button type='submit'>Vibe Check!</button>
-          </form>
+        <div className='search'>
+          <Form onSubmit={this.getJobData} id='form'>
+              <input 
+                placeholder='Search Jobs Now!'
+                type= "search"
+                name='search'
+                onChange={this.handleInput}
+              />
+              <Button type='submit'>Vibe Check!</Button>
+          </Form>
         </div>
         <div>
           {
