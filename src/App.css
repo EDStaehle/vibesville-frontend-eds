@@ -14,4 +14,17 @@ searchbar.button{
   background-color: aliceblue;
 }
 
+.login-nav {
+  display: flex;
+  margin-top: 0px !important;
+  background-color: #57CC99;
+  height:fit-content !important;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
 
+.auth-buttons {
+  display: flex;
+  justify-content: space-around;
+  gap: 2rem;
+}
