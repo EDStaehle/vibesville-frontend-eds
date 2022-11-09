@@ -80,6 +80,21 @@ handlestopbtn = () => {
     button: !this.state.button
   })
 }
+
+deleteSaved = async (id) => {
+  try {
+    await axios.delete(`https://vibesville.herokuapp.com/saved/${id}`)
+
+    let updatedSaved = this.state.saved.filter(job => job._id !== id)
+
+    this.setState({
+      saved: updatedSaved
+    })
+  } catch (error) {
+    console.log(error.message)
+  }
+}
+
   render() {
     console.log(this.state.saved)
     return (
@@ -99,6 +114,7 @@ handlestopbtn = () => {
                       showCanvas={this.showCanvas}
                       hideCanvas={this.hideCanvas}
                       button={this.state.button}
+                      deleteJob={this.deleteSaved}
                     />
                   </>
                   :
@@ -109,7 +125,7 @@ handlestopbtn = () => {
             
             <Routes>
               <Route
-                 exact path="/"
+                exact path="/"
                 element={<Main
                 button={this.handlestopbtn}
                 setSaved={this.setSavedNew}
@@ -117,6 +133,7 @@ handlestopbtn = () => {
               >
               </Route>
               <Route
+
                  exact path="/dashboard"
                  element={<Dashboard 
                   updateCompleted={this.state.updateCompleted}
@@ -125,7 +142,7 @@ handlestopbtn = () => {
                   setSaved={this.setSaved}
                   saved={this.state.saved}
                   favs={this.state.stars}
-                 />}
+                />}
               >
               </Route>
             </Routes>
