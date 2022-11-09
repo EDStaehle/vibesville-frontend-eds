@@ -45,6 +45,7 @@ export default class JobCard extends Component {
           <Row>
             <Col className="col1">
               <h4>Description</h4>
+
             </Col>
             <Col className="col2">
               <h4>City Vibe Score = {avgScore} / 10</h4>
@@ -99,5 +100,3 @@ export default class JobCard extends Component {
         </Card.Body>
       </Card>
     );
-  }
-}
