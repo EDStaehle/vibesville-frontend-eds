@@ -4,61 +4,42 @@ import Button from 'react-bootstrap/Button';
 import './Dashboard.css'
 import { useAuth0, withAuth0 } from "@auth0/auth0-react";
 import axios from 'axios';
-import Toast from 'react-bootstrap/Toast';
+import { Rating } from 'react-simple-star-rating'
+import DashCard from './DashCard';
 
 class Dashboard extends React.Component {
-
+constructor(props){
+  super(props)
+  this.state ={
+    cardSaved: this.props.saved,
+    
+  }
+}
   async componentDidMount() {
     this.props.button();
     if (this.props.auth0.isAuthenticated) {
 
       let savedData = await axios.get(`https://vibesville.herokuapp.com/saved/${this.props.auth0.user.email}`);
-      console.log(this.props.savedData)
+      console.log(savedData)
       this.props.setSaved(savedData.data)
 
-    } 
+    }
   }
-
   render() {
+    console.log(this.props.saved)
     let data = this.props.saved.map((d) => (
-      <Card key={d._id} className='dashboardCard'>
-        <Card.Body className='dashCardBody'>
-          <Card.Title>
-            <div className='dashCardTitle'>
-              <h2>{d.title}
-                <div className='cardCity'>
-                  <h6>{d.city}, {d.state}</h6>
-                </div>
-                <div>
-
-                </div>
-              </h2>
-              <h2>{d.company}</h2>
-            </div>
-
-          </Card.Title>
-          <Card.Text>
-            <div className='dashCardContainer'>
-              <div>
-                <p>{d.description}</p>
-              </div>
-              <div className='dashCardScore'>
-                <p>VibesVille Score = this.state.score</p>
-              </div>
-              <div className='dashCardStars'>
-                <p>THIS MANY STARS</p>
-              </div>
-            </div>
-          </Card.Text>
-        </Card.Body>
-      </Card>
+      <DashCard
+      updateCompleted={this.props.updateCompleted}
+      updateCard={this.props.updateCard}
+      key={d._id}
+      saved={this.state.cardSaved}
+      setSaved={this.props.setSaved}
+      d={d}/>
     ))
-
-
     return (
       <>
         {
-            this.props.auth0.isAuthenticated? <div> {data} </div>: <p>please login</p>
+          this.props.auth0.isAuthenticated ? <div> {data} </div> : <p>please login</p>
         }
 
       </>
