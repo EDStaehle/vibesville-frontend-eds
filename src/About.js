@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import "./About.css";
 
  class About extends Component {
   render() {
@@ -11,7 +12,7 @@ import React, { Component } from 'react'
         </div>
         <h2>The Team</h2>
         <div className='Namecard'>
-          <img src='' alt=''/>
+          <img src='./assets/Seth.jpg' alt=''/>
           <div className='container'>
             <h2>Seth Pierce</h2>
             <p>bio of team member here. Lorem ipsum ipsum</p>
@@ -25,10 +26,10 @@ import React, { Component } from 'react'
           </div>
         </div>
         <div className='Namecard'>
-          <img src='' alt=''/>
+          <img src='./assets/Dennis.png' alt='Dennis'/>
           <div className='container'>
             <h2>Dennis Nichols</h2>
-            <p>bio of team member here. Lorem ipsum ipsum</p>
+            <p>Software developer with data science and GIS interests. I have a broad scientific and technical background with education and work experience in fields ranging from nuclear power operation to geospatial analysis to public health project management.</p>
           </div>
         </div>
         <div className='Namecard'>
