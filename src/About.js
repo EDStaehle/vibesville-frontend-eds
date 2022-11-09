@@ -15,14 +15,14 @@ import "./About.css";
           <img src='./assets/Seth.jpg' alt=''/>
           <div className='container'>
             <h2>Seth Pierce</h2>
-            <p>bio of team member here. Lorem ipsum ipsum</p>
+            <p>My name is Seth Pierce. I'm 24 years old and I'm currently learning to code at Code Fellows. I spent 4 years in the Marine Corps as a diesel mechanic and I'm hoping to make a change in careers and grow as a Developer through Code Fellows.</p>
           </div>
         </div>
         <div className='Namecard'>
           <img src='' alt=''/>
           <div className='container'>
             <h2>Elias Staehle</h2>
-            <p>bio of team member here. Lorem ipsum ipsum</p>
+            <p>My name is Elias Staehle. I am 24 years old and a USMC vet that is training to become a full stack developer at code fellows.</p>
           </div>
         </div>
         <div className='Namecard'>
