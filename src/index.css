@@ -1,4 +1,4 @@
-*{
+*:not(.starRating){
   background-color: rgba(2, 197, 223, 0.512);
 align-items: center;
 align-content: center;

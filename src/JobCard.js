@@ -10,6 +10,10 @@ export default class JobCard extends Component {
   }
 
   render() {
+    let score = this.props.job.CityData ? [Math.round(this.props.job.CityData.categories[0].score_out_of_10),Math.round(this.props.job.CityData.categories[16].score_out_of_10),
+    Math.round(this.props.job.CityData.categories[1].score_out_of_10), Math.round(this.props.job.CityData.categories[8].score_out_of_10), Math.round(this.props.job.CityData.categories[14].score_out_of_10)]
+    : null
+    let avgScore = score ? score.reduce((a,b) => a + b , 0) / score.length : 'No Data Found'
     return (
     <Card>
       <Card.Body>
@@ -30,13 +34,17 @@ export default class JobCard extends Component {
               <button onClick={this.openModal}>View More</button>
             </div>
             <div id='cityVibeContainer'>
-              <h4>City Vibe Score = this.city.vibescore</h4>
-              <ul>
-                <li>Metric 1</li>
-                <li>Metric 2</li>
-                <li>Metric 3</li>
-                <li>Metric 4</li>
-              </ul>
+              <h4>City Vibe Score = {avgScore} / 10</h4>
+                {this.props.job.CityData ?
+                <ul>
+                  <li>Housing Rating = {Math.round(this.props.job.CityData.categories[0].score_out_of_10)}</li>
+                  <li>Cost of Living Rating = {Math.round(this.props.job.CityData.categories[1].score_out_of_10)}</li>
+                  <li>Health Care Rating = { Math.round(this.props.job.CityData.categories[8].score_out_of_10)}</li>
+                  <li>Nature Vibes = {Math.round(this.props.job.CityData.categories[16].score_out_of_10)}</li>
+                  <li>Leisure and Culture = {Math.round(this.props.job.CityData.categories[14].score_out_of_10)}</li>
+                </ul>
+                  :<p>No Data Found</p>
+              }
             </div>
           </div>
         </Card.Text>
