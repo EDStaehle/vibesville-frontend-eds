@@ -19,15 +19,17 @@ class JobModal extends React.Component {
 
 
   handleJobSumbit = () => {
+    let score = this.props.job.CityData ? [Math.round(this.props.job.CityData.categories[0].score_out_of_10),Math.round(this.props.job.CityData.categories[16].score_out_of_10),
+    Math.round(this.props.job.CityData.categories[1].score_out_of_10), Math.round(this.props.job.CityData.categories[8].score_out_of_10), Math.round(this.props.job.CityData.categories[14].score_out_of_10)]
+    : null
+    let avgScore = score ? score.reduce((a,b) => a + b , 0) / score.length : 'No Data Found'
     let favoriteJob = {
       title: this.props.job.title,
       description: this.props.job.description,
       company: this.props.job.company,
       redirect_url: this.props.job.redirect_url,
       city: this.props.job.city,
-      city_score: this.props.job.CityData ? [Math.round(this.props.job.CityData.categories[0].score_out_of_10),Math.round(this.props.job.CityData.categories[16].score_out_of_10),
-      Math.round(this.props.job.CityData.categories[1].score_out_of_10), Math.round(this.props.job.CityData.categories[8].score_out_of_10), Math.round(this.props.job.CityData.categories[14].score_out_of_10)]
-      : null,
+      city_score: avgScore,
       state: this.props.job.state,
       latitude: this.props.job.latitude,
       longitude: this.props.job.longitude,

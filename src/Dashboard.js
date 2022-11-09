@@ -58,7 +58,7 @@ class Dashboard extends React.Component {
     return (
       <>
         {
-           this.props.auth0.isAuthenticated? <div> {data} </div>: <p>please login</p>
+            this.props.auth0.isAuthenticated? <div> {data} </div>: <p>please login</p>
         }
 
       </>
