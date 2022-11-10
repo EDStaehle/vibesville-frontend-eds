@@ -6,10 +6,7 @@ import "./About.css";
     return (
       <>
       <div className='About'>
-        <div>
-        {/* <h1>About the Team</h1>
-        <p>Team 5, insert text about who we are, who our team is and what we do, etc.</p>
-        </div> */}
+ 
         <h2>The Team</h2>
         <div className='Namecard'>
           <img src='./assets/Seth.jpg' alt='Seth'/>

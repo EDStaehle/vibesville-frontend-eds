@@ -41,7 +41,7 @@ Form {
 }
 
 .hero-contain h1 {
-  font-size: 5rem;
+  font-size: 10vh;
   color: #80ED99;
   width: 50%;
 }
