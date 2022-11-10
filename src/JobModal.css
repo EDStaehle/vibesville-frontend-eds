@@ -1,0 +1,20 @@
+
+ .modal-content p {
+  overflow-y: scroll;
+  text-align: left;
+}
+
+#rating-div {
+  margin-top: 1vw;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5vw;
+}
+
+.modal-city-container {
+  border-top: 1px solid black;
+}
+
+.modal-content {
+  padding: 0rem !important;
+}

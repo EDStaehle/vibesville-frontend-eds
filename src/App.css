@@ -1,6 +1,5 @@
 body{
   background-color: #22577A !important;
-  overflow-y: none;
 }
 
 input{
@@ -29,3 +28,4 @@ searchbar.button{
   justify-content: space-around;
   gap: 2rem;
 }
+
