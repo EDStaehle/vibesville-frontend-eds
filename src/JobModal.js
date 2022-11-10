@@ -81,7 +81,14 @@ class JobModal extends React.Component {
       console.log(error.message);
     }
   };
-
+  scoreColor = (score) => {
+    if (score < 3) {
+      return "red";
+    } else if (score < 6) {
+      console.log("did something with score");
+      return "yellow";
+    } else return "green";
+  };
   render() {
     let score = this.props.job.CityData
       ? [
