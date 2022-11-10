@@ -63,8 +63,8 @@ class Sidebar extends React.Component {
       <>
       {
         this.props.button? null:
-      <Button variant="primary" onClick={this.props.showCanvas}>
-        Launch
+      <Button id = 'sidebar-btn' variant="primary" onClick={this.props.showCanvas}>
+        See Saved Jobs
       </Button> 
       }
       <Offcanvas className='sideBarCanvas' show={this.props.show} onHide={this.props.hideCanvas} placement='end'>

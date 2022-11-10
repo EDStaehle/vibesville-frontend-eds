@@ -12,6 +12,9 @@
   border-radius: 10px !important;
 }
 
+
+ 
+
 .job-list  .card-body {
   background-color: white;
   border-radius: 10px;
@@ -27,8 +30,20 @@
 
 .list-group-item {
   width: 60%;
-  background-color: #C7F9CC !important;
 }
+.green {
+  background-color: #C7F9CC !important ;
+}
+
+.yellow {
+  background-color: #ffe884 !important;
+}
+
+.red {
+  background-color: #ce876d !important;
+}
+
+
 
 /* .col1 {
   background-color: #38A3A5;
