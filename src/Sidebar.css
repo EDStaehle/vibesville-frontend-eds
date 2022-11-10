@@ -1,46 +1,100 @@
-.canvas{
+.sideBarCanvas{
   width: 800px !important;
 }
+
 .sidebarCard{
-  margin-left: 10rem;
-
   width: 500px !important;
-  height: 150px !important;
-
   margin-bottom: 10px;
-}
-.cardBody{
-  padding: .01px !important;
+  position: relative;
 }
 
-.sidebarCardTitle{
-  display: flex;
-  padding-left: 10px;
-  padding-right: 10px;
-  justify-content: space-between;
-  border-bottom: 1px solid black;
-  align-items: center;
-  margin-bottom: .01px;
-}
-.cardTitle h2{
-  height: 60px !important;
-}
-div.card-title.h5{
-  margin-bottom: .01px !important;
-}
-.cardCity{
-  padding-top:10px;
-  margin-bottom: .01px !important;
-}
-.cardCity h6{
-  margin-bottom: .01px;
-}
-.cardContainer{
-  display: flex;
-}
 .cardScore{
   width: 50%;
   min-height: 80px !important;
-  border-right: 1px solid black;
   padding: .01px !important;
+}
+
+.sideBarCanvas .offcanvas-body {
+  display: flex;
+  flex-direction: column;
+  background-color: #38A3A5;
+  width: 800px !important;
+}
+.sideBarCanvas .offcanvas-header {
+  background-color: #38A3A5;
+  width: 100%;
+  display: flex;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center;
+  padding-bottom: 50px;
+}
+.sideBarCanvas .offcanvas-header .offcanvas-title{
+  font-size: 35px;
+}
+
+.sideBarCanvas .offcanvas-header .btn-close {
+  position: absolute;
+  right: 3%;
+}
+
+.sidebarTopLeft {
+  width: 50%;
+}
+
+.sidebarTopLeft h2{
+  font-size: 20px;
+}
+.sidebarTopLeft h4{
+  font-size: 15px;
+}
+
+.cardBody {
+  width: 100%;
+  border: none !important;
+}
+
+.sidebarCardTitle {
+  display: flex;
+  background-color: #80ED99;
+  padding: 0 !important;
+  border-radius: 10px;
+}
+
+.sidebarTitle {
+  padding: 0;
+  margin: 0;
+}
+
+.cardBody {
+  padding: 0 !important;
+}
+
+.sidecardContainer {
+  display: flex;
+}
+
+.cardScore {
+  display: flex;
+  font-size: 15px;
+}
+
+#buttonSideDiv{
+  position: absolute;
+  top: 0;
+  right: 2%;
+}
+
+#buttonSideDiv button {
+  background-color: #80ED99 !important;
+  border: none;
+  padding: 0px;
+}
+
+.cardCity {
+  padding-right: 10px;
+}
+
+.sideStar {
+  padding-bottom: 20px;
 }
