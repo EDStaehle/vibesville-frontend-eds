@@ -23,6 +23,7 @@ export default class DashCard extends Component {
     let itemToUpdate = this.props.d;
     itemToUpdate.user_score = this.state.rating;
     this.props.updateCard(itemToUpdate);
+    this.setState({buttonisclicked: false})
   }
   handleClick = () => {
     this.setState({ buttonisclicked: true })

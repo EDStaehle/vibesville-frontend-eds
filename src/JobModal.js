@@ -71,12 +71,15 @@ class JobModal extends React.Component {
     };
     this.postFavJob(favoriteJob);
     this.props.onHide();
-    this.props.setSaved(favoriteJob);
   };
+  
+
 
   postFavJob = async (favoriteJobObj) => {
     try {
       await axios.post(`${process.env.REACT_APP_SERVER}/saved`, favoriteJobObj);
+      let savedData = await axios.get(`${process.env.REACT_APP_SERVER}/saved/${this.props.auth0.user.email}`)
+      this.props.setSaved(savedData.data)
     } catch (error) {
       console.log(error.message);
     }

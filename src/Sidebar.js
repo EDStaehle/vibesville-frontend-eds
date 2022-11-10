@@ -22,6 +22,8 @@ class Sidebar extends React.Component {
 
 
 
+
+
   render() {
     let sorted = this.props.saved.sort((a,b) => b.user_score - a.user_score)
     let data = sorted.map((d,idx) => (
