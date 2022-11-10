@@ -1,3 +1,13 @@
 img{
+  border-radius: 5px;
 max-width: 20rem;
+}
+body{
+  background-color: #0b99bc !important;
+  overflow-y: none;
+}
+.card{
+  background-color: #09c6f6 !important;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
