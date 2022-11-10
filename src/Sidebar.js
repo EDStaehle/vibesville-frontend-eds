@@ -25,16 +25,16 @@ class Sidebar extends React.Component {
     let data = sorted.map((d,idx) => (
       <Card key={idx} className='sidebarCard'>
         <Card.Body className='cardBody'>
-          <Card.Title>
+          <Card.Title className='sidebarTitle'>
             <div className='sidebarCardTitle'>
-              <h2>{d.title}
+              <div className='sidebarTopLeft'>
+                <h2>{d.title}</h2>
+                <h4>{d.company}</h4>
+              </div>
                 <div className='cardCity'>
-                  <h6>{d.city}</h6>
+                  <h6>{d.city},{d.state}</h6>
                 </div>
-              </h2>
-              <h2>{d.company}</h2>
             </div>
-            <div id='buttonDiv'><Button onClick={() => { this.props.deleteJob(d._id) }} id='deleteJob' variant="danger">Delete</Button></div>
           </Card.Title>
           <Card.Text>
             <div className='cardContainer'>
@@ -48,6 +48,7 @@ class Sidebar extends React.Component {
                   initialValue={d.user_score}
                   readonly={true}
                 />
+                <div id='buttonDiv'><Button onClick={() => { this.props.deleteJob(d._id) }} id='deleteJob' variant="danger">Delete</Button></div>
               </div>
             </div>
           </Card.Text>

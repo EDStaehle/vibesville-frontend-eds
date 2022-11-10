@@ -1,46 +1,62 @@
+/* canvas itself */
 .canvas{
   width: 800px !important;
 }
+
 .sidebarCard{
-  margin-left: 10rem;
-
   width: 500px !important;
-  height: 150px !important;
-
   margin-bottom: 10px;
 }
-.cardBody{
-  padding: .01px !important;
-}
 
-.sidebarCardTitle{
-  display: flex;
-  padding-left: 10px;
-  padding-right: 10px;
-  justify-content: space-between;
-  border-bottom: 1px solid black;
-  align-items: center;
-  margin-bottom: .01px;
-}
-.cardTitle h2{
-  height: 60px !important;
-}
-div.card-title.h5{
-  margin-bottom: .01px !important;
-}
-.cardCity{
-  padding-top:10px;
-  margin-bottom: .01px !important;
-}
-.cardCity h6{
-  margin-bottom: .01px;
-}
-.cardContainer{
-  display: flex;
-}
 .cardScore{
   width: 50%;
   min-height: 80px !important;
-  border-right: 1px solid black;
   padding: .01px !important;
+}
+
+.offcanvas-body {
+  display: flex;
+  flex-direction: column;
+  background-color: blue;
+  width: 100%;
+}
+.offcanvas-header {
+  background-color: blue;
+  width: 100%;
+  display: flex;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center;
+}
+
+.btn-close {
+  position: absolute;
+  right: 3%;
+}
+
+.sidebarTopLeft {
+  width: 50%;
+}
+
+.sidebarTopLeft h2{
+  font-size: 20px;
+}
+.sidebarTopLeft h4{
+  font-size: 12px;
+}
+
+.cardBody {
+  width: 100%;
+  border: none !important;
+}
+
+.sidebarCardTitle {
+  display: flex;
+  background-color: #80ED99;
+  padding: 0 !important;
+}
+
+.sidebarTitle {
+  padding: 0;
+  margin: 0;
 }
