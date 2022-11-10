@@ -52,7 +52,7 @@ class Sidebar extends React.Component {
                   readonly={true}
                   size={30}
                 />
-                <div id='buttonSideDiv'><Button onClick={() => { this.props.deleteJob(d._id) }} id='deleteJob' variant="danger">X</Button></div>
+                <div id='buttonSideDiv'><Button onClick={() => { this.props.deleteJob(d._id) }} id='deleteJob' variant="danger">🗑️</Button></div>
               </div>
             </div>
           </Card.Text>
