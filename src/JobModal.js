@@ -110,17 +110,18 @@ class JobModal extends React.Component {
         </Modal.Header>
         <Modal.Body>
           <Container fluid>
-
             <Container fluid>
               <Row>
                 <h2>{this.props.job.company}</h2>
               </Row>
-           
+
               {/* description text */}
               <Row>
-                <p id = 'description-text'>{this.props.job.description}</p>
+                <p id="description-text">{this.props.job.description}</p>
               </Row>
-              <Button href = {this.props.job.redirect_url} >See Full Listing</Button>
+              <Button href={this.props.job.redirect_url}>
+                See Full Listing
+              </Button>
             </Container>
 
             <Container className="modal-city-container" fluid>
@@ -142,35 +143,60 @@ class JobModal extends React.Component {
                   <div id="cityVibeContainer">
                     {this.props.job.CityData ? (
                       <ListGroup>
-                        <ListGroupItem>
+                        <ListGroupItem
+                          className={this.scoreColor(
+                            this.props.job.CityData.categories[0]
+                              .score_out_of_10
+                          )}
+                        >
                           Housing Rating ={" "}
                           {Math.round(
                             this.props.job.CityData.categories[0]
                               .score_out_of_10
                           )}
                         </ListGroupItem>
-                        <ListGroupItem>
+                        <ListGroupItem
+                          className={this.scoreColor(
+                            this.props.job.CityData.categories[1]
+                              .score_out_of_10
+                          )}
+                        >
                           Cost of Living Rating ={" "}
                           {Math.round(
                             this.props.job.CityData.categories[1]
                               .score_out_of_10
                           )}
                         </ListGroupItem>
-                        <ListGroupItem>
+                        <ListGroupItem
+                          className={this.scoreColor(
+                            this.props.job.CityData.categories[8]
+                              .score_out_of_10
+                          )}
+                        >
                           Health Care Rating ={" "}
                           {Math.round(
                             this.props.job.CityData.categories[8]
                               .score_out_of_10
                           )}
                         </ListGroupItem>
-                        <ListGroupItem>
+                        <ListGroupItem
+                          className={this.scoreColor(
+                            this.props.job.CityData.categories[16]
+                              .score_out_of_10
+                          )}
+                        >
                           Nature Vibes ={" "}
                           {Math.round(
                             this.props.job.CityData.categories[16]
                               .score_out_of_10
                           )}
                         </ListGroupItem>
-                        <ListGroupItem>
+                        <ListGroupItem
+                          className={this.scoreColor(
+                            this.props.job.CityData.categories[14]
+                              .score_out_of_10
+                          )}
+                        >
                           Leisure and Culture ={" "}
                           {Math.round(
                             this.props.job.CityData.categories[14]
@@ -181,7 +207,7 @@ class JobModal extends React.Component {
                     ) : null}
                   </div>
                   {this.props.auth0.isAuthenticated ? (
-                    <div id='rating-div'>
+                    <div id="rating-div">
                       <Rating
                         className="starRating"
                         onClick={this.handleRating}
@@ -206,7 +232,6 @@ class JobModal extends React.Component {
                 </div>
               </Row>
             </Container>
-
           </Container>
         </Modal.Body>
       </Modal>
