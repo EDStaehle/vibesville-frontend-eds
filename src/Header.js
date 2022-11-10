@@ -38,14 +38,14 @@ export default class Header extends Component {
               </Navbar.Brand>
               <Navbar.Toggle />
 
-              <Navbar.Offcanvas placement="start">
+              <Navbar.Offcanvas className='navOffCanvas' placement="start">
                   <div id='menu' ref={this.menu}>
                     <div id='menuItems' ref={this.menuItems}>
-                <Offcanvas.Header closeButton>
+                <Offcanvas.Header className='navOffCanvasHeader' closeButton>
 
                     <Offcanvas.Title className='menuItem' ref={this.menuItem}>Navigation</Offcanvas.Title>
                 </Offcanvas.Header>
-                <Offcanvas.Body>
+                <Offcanvas.Body className='navOffCanvasBody'>
                   
                       <NavItem>
                         <Link to="/" className='menuItem' ref={this.menuItem}>
