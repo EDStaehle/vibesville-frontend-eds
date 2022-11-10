@@ -124,6 +124,7 @@ class JobModal extends React.Component {
               <Row>
                 <p id = 'description-text'>{this.props.job.description}</p>
               </Row>
+              <Button href = {this.props.job.redirect_url} >See Full Listing</Button>
             </Container>
 
             <Container className="modal-city-container" fluid>
