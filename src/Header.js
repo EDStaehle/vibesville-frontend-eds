@@ -5,7 +5,23 @@ import Offcanvas from 'react-bootstrap/Offcanvas';
 import Container from 'react-bootstrap/Container';
 import "./Header.css"
 export default class Header extends Component {
+  constructor(props){
+    super (props)
+    this.menu= React.createRef();
+    this.menuItem= React.createRef();
+    this.menuItems= React.createRef();
+  }
+  
   render() {
+    const menu = document.getElementById('menu')
+    Array.from(document.getElementsByClassName('menuItem'))
+    .forEach((item, index) => {
+      item.onmouseover = () => {
+        menu.dataset.activeIndex = index
+      }
+      console.log(menu)
+    });
+   
     return (
       <>
         {[false].map((expand) => (
@@ -13,7 +29,7 @@ export default class Header extends Component {
             <Container fluid>
               <Navbar.Brand>
                 <img
-                  src= '/vibe_light.png'
+                  src='/vibe_light.png'
                   width="400"
                   // height="30"
                   // className="d-inline-block align-top"
@@ -21,31 +37,42 @@ export default class Header extends Component {
                 />
               </Navbar.Brand>
               <Navbar.Toggle />
+
               <Navbar.Offcanvas placement="start">
+                  <div id='menu' ref={this.menu}>
+                    <div id='menuItems' ref={this.menuItems}>
                 <Offcanvas.Header closeButton>
-                  <Offcanvas.Title>Navigation</Offcanvas.Title>
+
+                    <Offcanvas.Title className='menuItem' ref={this.menuItem}>Navigation</Offcanvas.Title>
                 </Offcanvas.Header>
                 <Offcanvas.Body>
-                  <NavItem>
-                    <Link to="/" className="nav-link">
-                      Home
-                    </Link>
-                  </NavItem>
-                  <NavItem>
-                    <Link to="/Dashboard" className="nav-link">
-                      Dashboard
-                    </Link>
-                  </NavItem>
-                  <NavItem>
-                    <Link to="/about" className="nav-link">
-                      About
-                    </Link>
-                  </NavItem>
+                  
+                      <NavItem>
+                        <Link to="/" className='menuItem' ref={this.menuItem}>
+                          Home
+                        </Link>
+                      </NavItem>
+                      <NavItem>
+                        <Link to="/Dashboard" className='menuItem' ref={this.menuItem}>
+                          Dashboard
+                        </Link>
+                      </NavItem>
+                      <NavItem>
+                        <Link to="/about" className='menuItem' ref={this.menuItem}>
+                          About
+                        </Link>
+                      </NavItem>
+                  
                 </Offcanvas.Body>
-              </Navbar.Offcanvas>
-            </Container>
+                    </div>
+              </div>
+              <div className='menu-background-pattern'></div>
+              <div id='menu-background-image'></div>
+            </Navbar.Offcanvas>
+          </Container>
           </Navbar>
-        ))}
+    ))
+  }
       </>
     );
   }

@@ -1,50 +1,148 @@
+#menu {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
 
-.navbar-toggler{
+.menuItem {
+  margin-left: .01px !important;
+  margin-right: .01px !important;
+  width: auto;
+  color: rgb(255, 255, 255) !important;
+  font-size: clamp(3rem, 8vw, 8rem) !important;
+  display: block;
+  text-decoration: none !important;
+  padding: clamp(0.25rem, 0.5vw, 1rem);
+  transition: opacity 400ms ease;
+}
+
+#menuItems {
+  margin-right: .01px;
+  margin-left: clamp(4rem, 20vw, 48rem) !important;
+  position: relative;
+  z-index: 2;
+  width: 50% !important;
+}
+
+#menuItems:hover .menuItem {
+
+  opacity: .25 !important;
+}
+
+#menuItems .menuItem:hover {
+  opacity: 1 !important;
+}
+
+.menu-background-pattern {
+  height: 100%;
+  width: 100%;
+  background-image: radial-gradient(rgba(2255, 255, 255, 0.1) 9%,
+      transparent 9%);
+  background-position: 0% 0%;
+  background-size: 10vmin 10vmin;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: 1;
+  transition: opacity 800ms ease,
+    background-size 800ms ease,
+    background-position 800ms ease;
+
+}
+
+#menu:hover~.menu-background-pattern {
+  background-size: 9vmin 9vmin;
+  opacity: 0.5 !important;
+}
+
+#menu[data-active-index="0"]:hover~.menu-background-pattern {
+  background-position: 0% -25% !important;
+}
+
+#menu[data-active-index="1"]:hover~.menu-background-pattern {
+  background-position: 0% -50%;
+}
+
+#menu[data-active-index="2"]:hover~.menu-background-pattern {
+  background-position: 0% -75%;
+}
+
+#menu[data-active-index="3"]:hover~.menu-background-pattern {
+  background-position: 0% -100%;
+}
+
+#menu-background-image {
+  height: 100%;
+  width: 100%;
+  background-image: url("https://images.unsplash.com/photo-1667802694056-3dd951aba710?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2574&q=80");
+
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: 0;
+  background-position: 40%;
+  background-size: 110vmax;
+  opacity: 0.15;
+
+  transition: opacity 800ms ease,
+    background-size 800ms ease,
+    background-position 800ms ease;
+}
+
+#menu:hover~.menu-background-image {
+  background-size: 100vmax;
+  opacity: 0.5;
+}
+
+
+
+
+
+
+
+
+
+
+.navbar-toggler {
   position: fixed;
   left: 3rem;
-  background-color:#80ED99 !important;
+  background-color: #80ED99 !important;
 }
-.navbar-brand{
+
+.navbar-brand {
   margin-right: none !important;
 }
-.navbar{
-  display:  flex !important;
+
+.navbar {
+  display: flex !important;
   background-color: #2e8a8c !important;
   position: relative;
   height: 8rem;
   margin-bottom: none !important;
   margin-top: 0rem !important;
 }
-.navbar-brand{
+
+.offcanvas {
+  background-color: black !important;
+  width: auto !important;
+}
+
+.offcanvas-body {
+  padding: .01px !important;
+  width: 1000px !important;
+  margin: .01px !important;
+}
+
+.navbar-brand {
   display: block;
   font-size: 300% !important;
   position: absolute;
   left: 35%;
 }
-.nav-item{
+
+.nav-item {
   display: flex !important;
   width: 100%;
-  height:  auto;
+  height: auto;
 }
-.nav-link {
-  color:white;
-  display: flex;
-  /* justify-content: space-around; */
-  font-size: 100% !important;
-  
-  }
-  
-  .nav-link:visited {
-    color:rgb(6, 6, 6);
-    
-    }
-  
-    .nav-link:hover{
-      color:rgb(0, 162, 255);
-      
-      }
-  
-      .nav-link:visited:hover {
-        color:rgb(0, 162, 255);
-        
-        }
