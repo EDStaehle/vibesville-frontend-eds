@@ -77,10 +77,7 @@ class JobModal extends React.Component {
 
   postFavJob = async (favoriteJobObj) => {
     try {
-      await axios.post(
-        `https://vibesville.herokuapp.com/saved`,
-        favoriteJobObj
-      );
+      await axios.post(`${process.env.REACT_APP_SERVER}/saved`, favoriteJobObj);
     } catch (error) {
       console.log(error.message);
     }

@@ -11,7 +11,9 @@ class Sidebar extends React.Component {
   async componentDidMount(){
     if(this.props.auth0.isAuthenticated){
 
-        let savedData = await axios.get(`https://vibesville.herokuapp.com/saved/${this.props.auth0.user.email}`);
+        let savedData = await axios.get(
+          `${process.env.REACT_APP_SERVER}/saved/${this.props.auth0.user.email}`
+        );
         console.log(this.props.savedData)
         this.props.setSaved(savedData.data)
 
