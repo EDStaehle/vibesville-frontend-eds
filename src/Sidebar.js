@@ -37,18 +37,20 @@ class Sidebar extends React.Component {
             </div>
           </Card.Title>
           <Card.Text>
-            <div className='cardContainer'>
+            <div className='sidecardContainer'>
               <div className='cardScore'>
                 <p>VibesVille Score = {d.city_score}</p>
               </div>
               <div className='cardStars'>
+                <p>Your Score</p>
                 <Rating
-                  className='starRating'
+                  className='starRating sideStar'
                   allowFraction={true}
                   initialValue={d.user_score}
                   readonly={true}
+                  size={30}
                 />
-                <div id='buttonDiv'><Button onClick={() => { this.props.deleteJob(d._id) }} id='deleteJob' variant="danger">Delete</Button></div>
+                <div id='buttonSideDiv'><Button onClick={() => { this.props.deleteJob(d._id) }} id='deleteJob' variant="danger">X</Button></div>
               </div>
             </div>
           </Card.Text>
@@ -63,7 +65,7 @@ class Sidebar extends React.Component {
         Launch
       </Button> 
       }
-      <Offcanvas className='canvas' show={this.props.show} onHide={this.props.hideCanvas} placement='end'>
+      <Offcanvas className='sideBarCanvas' show={this.props.show} onHide={this.props.hideCanvas} placement='end'>
         <Offcanvas.Header closeButton>
           <Offcanvas.Title>Saved Jobs</Offcanvas.Title>
         </Offcanvas.Header>
