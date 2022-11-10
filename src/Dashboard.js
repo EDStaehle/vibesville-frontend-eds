@@ -15,7 +15,9 @@ constructor(props){
   async componentDidMount() {
     this.props.button();
     if (this.props.auth0.isAuthenticated) {
-      let savedData = await axios.get(`https://vibesville.herokuapp.com/saved/${this.props.auth0.user.email}`);
+      let savedData = await axios.get(
+        `${process.env.REACT_APP_SERVER}/saved/${this.props.auth0.user.email}`
+      );
       console.log(savedData)
       this.props.setSaved(savedData.data)
     }
