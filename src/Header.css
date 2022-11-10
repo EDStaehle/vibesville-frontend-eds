@@ -145,7 +145,7 @@ color: rgb(87, 204, 153) !important;
   width: auto !important;
 }
 
-.offcanvas-body {
+.navOffCanvasBody{
   padding: .01px !important;
   width: 500px !important;
   margin: .01px !important;
@@ -163,7 +163,7 @@ color: rgb(87, 204, 153) !important;
   width: 100%;
   height: auto;
 }
-.btn-close{
+.navOffCanvas .navOffCanvasHeader .btn-close{
   color: transparent!important;
   width: 100px !important;
   height: 100px !important;

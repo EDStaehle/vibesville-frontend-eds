@@ -1,0 +1,6 @@
+.dashboardCard{
+  width: 35vw !important;
+}
+.dashcardRatingAndDelete{
+display: flex;
+}

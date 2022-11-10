@@ -24,6 +24,7 @@ constructor(props){
   }
   render() {
     console.log(this.props.saved)
+    
     let data = this.props.saved.map((d,idx) => (
       <DashCard
       deleteSaved={this.props.deleteSaved}
@@ -35,11 +36,11 @@ constructor(props){
       d={d}/>
     ))
     return (
-      <>
+      <div className='dashCardContain'>
         {
           this.props.auth0.isAuthenticated ? <div> {data} </div> : <p>please login</p>
         }
-      </>
+      </div>
     )
   }
 }
