@@ -32,7 +32,7 @@ class Main extends React.Component {
     e.preventDefault();
     this.setState({ isLoading: true });
     try {
-      let url = `https://vibesville.herokuapp.com/jobs?jobQuery=${this.state.jobTitle}`;
+      let url = `${process.env.REACT_APP_SERVER}/jobs?jobQuery=${this.state.jobTitle}`;
 
       let jobs = await axios.get(url);
       this.setState({

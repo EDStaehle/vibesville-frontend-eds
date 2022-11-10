@@ -10,7 +10,7 @@
   margin-right: .01px !important;
   width: auto;
   color: rgb(255, 255, 255) !important;
-  font-size: clamp(3rem, 8vw, 8rem) !important;
+  font-size: clamp(2rem, 3vw, 6rem) !important;
   display: block;
   text-decoration: none !important;
   padding: clamp(0.25rem, 0.5vw, 1rem);
@@ -19,28 +19,31 @@
 
 #menuItems {
   margin-right: .01px;
-  margin-left: clamp(4rem, 20vw, 48rem) !important;
+  margin-left: clamp(3rem, 5vw, 28rem) !important;
   position: relative;
   z-index: 2;
   width: 50% !important;
 }
 
 #menuItems:hover .menuItem {
-
+color: rgb(87, 204, 153) !important;
   opacity: .25 !important;
 }
 
 #menuItems .menuItem:hover {
+  color: rgb(56, 163, 165) !important;
   opacity: 1 !important;
 }
 
 .menu-background-pattern {
+  background-color: rgb(34, 87, 122);
+  opacity: .2;
   height: 100%;
   width: 100%;
   background-image: radial-gradient(rgba(2255, 255, 255, 0.1) 9%,
       transparent 9%);
   background-position: 0% 0%;
-  background-size: 10vmin 10vmin;
+  background-size: 9vmin 9vmin;
   position: absolute;
   left: 0px;
   top: 0px;
@@ -52,8 +55,8 @@
 }
 
 #menu:hover~.menu-background-pattern {
-  background-size: 9vmin 9vmin;
-  opacity: 0.5 !important;
+  background-size: 8vmin 8vmin;
+  opacity: 0.35 !important;
 }
 
 #menu[data-active-index="0"]:hover~.menu-background-pattern {
@@ -75,14 +78,14 @@
 #menu-background-image {
   height: 100%;
   width: 100%;
-  background-image: url("https://images.unsplash.com/photo-1667802694056-3dd951aba710?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2574&q=80");
+  background-image: url("https://images.unsplash.com/photo-1535498730771-e735b998cd64?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80");
 
   position: absolute;
   left: 0px;
   top: 0px;
   z-index: 0;
   background-position: 40%;
-  background-size: 110vmax;
+  background-size: 90vmax;
   opacity: 0.15;
 
   transition: opacity 800ms ease,
@@ -90,11 +93,25 @@
     background-position 800ms ease;
 }
 
-#menu:hover~.menu-background-image {
-  background-size: 100vmax;
-  opacity: 0.5;
+#menu:hover ~ #menu-background-image {
+  background-size: 60vmax;
+  opacity: 0.2;
+}
+#menu[data-active-index="0"]:hover~#menu-background-image {
+  background-position: center 45% !important;
 }
 
+#menu[data-active-index="1"]:hover~#menu-background-image {
+  background-position: center 50%;
+}
+
+#menu[data-active-index="2"]:hover~#menu-background-image {
+  background-position: center 55%;
+}
+
+#menu[data-active-index="3"]:hover~#menu-background-image {
+  background-position: center 60%;
+}
 
 
 
@@ -130,7 +147,7 @@
 
 .offcanvas-body {
   padding: .01px !important;
-  width: 1000px !important;
+  width: 500px !important;
   margin: .01px !important;
 }
 
@@ -138,11 +155,22 @@
   display: block;
   font-size: 300% !important;
   position: absolute;
-  left: 35%;
+  left: 38%;
 }
 
 .nav-item {
   display: flex !important;
   width: 100%;
   height: auto;
+}
+.btn-close{
+  color: transparent!important;
+  width: 100px !important;
+  height: 100px !important;
+  top: 40vh;
+  right: 80%;
+  position: relative;
+}
+.offcanvas-header{
+  padding: 0.01px !important;
 }

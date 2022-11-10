@@ -77,10 +77,7 @@ class JobModal extends React.Component {
 
   postFavJob = async (favoriteJobObj) => {
     try {
-      await axios.post(
-        `https://vibesville.herokuapp.com/saved`,
-        favoriteJobObj
-      );
+      await axios.post(`${process.env.REACT_APP_SERVER}/saved`, favoriteJobObj);
     } catch (error) {
       console.log(error.message);
     }
@@ -124,6 +121,7 @@ class JobModal extends React.Component {
               <Row>
                 <p id = 'description-text'>{this.props.job.description}</p>
               </Row>
+              <Button href = {this.props.job.redirect_url} >See Full Listing</Button>
             </Container>
 
             <Container className="modal-city-container" fluid>

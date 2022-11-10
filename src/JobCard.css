@@ -1,4 +1,4 @@
-.card {
+.job-list .card {
   width: 900px !important;
   background-color: transparent !important;
   border: none !important;
@@ -6,13 +6,13 @@
 /* .card button {
   
 } */
-.card-header {
+.job-list .card-header {
   width: 100%;  
   background-color: #80ED99 !important;
   border-radius: 10px !important;
 }
 
-.card-body {
+.job-list  .card-body {
   background-color: white;
   border-radius: 10px;
 }

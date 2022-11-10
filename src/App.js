@@ -37,7 +37,7 @@ class App extends React.Component {
 
   updateCard = async (itemToUpdate) => {
     try {
-      let url = `https://vibesville.herokuapp.com/saved/${itemToUpdate._id}`
+      let url = `${process.env.REACT_APP_SERVER}/saved/${itemToUpdate._id}`
       let updateditem = await axios.put(url, itemToUpdate);
       let updateditemArray = this.state.saved.map(existingItem => {
         return existingItem._id === itemToUpdate._id
@@ -70,7 +70,7 @@ class App extends React.Component {
 
   deleteSaved = async (id) => {
     try {
-      await axios.delete(`https://vibesville.herokuapp.com/saved/${id}`)
+      await axios.delete(`${process.env.REACT_APP_SERVER}/saved/${id}`)
 
       let updatedSaved = this.state.saved.filter(job => job._id !== id)
 
