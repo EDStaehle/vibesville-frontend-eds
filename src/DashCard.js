@@ -95,7 +95,7 @@ export default class DashCard extends Component {
                       <div className='starsAndUpdateOnly'>
                       <Rating
                         className='starRating'
-                        size={70}
+                        size={40}
                         allowFraction={true}
                         initialValue={this.props.d.user_score}
                         readonly={true} />
