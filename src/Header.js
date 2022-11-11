@@ -6,9 +6,7 @@ import Container from 'react-bootstrap/Container';
 
 import "./Header.css"
  class Header extends React.Component {
-  constructor(props){
-    super (props)
-  }
+  
   
   render() {
     const menu = document.getElementById('menu')
