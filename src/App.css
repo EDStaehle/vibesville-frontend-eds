@@ -34,7 +34,7 @@ searchbar.button{
   width: 440px;
   display: flex;
   position: absolute;
-  left: 82vw;
+  right: 1vw;
   font-weight: bold;
 }
 
