@@ -117,7 +117,7 @@ class App extends React.Component {
               exact path="/"
               element={<Main
                 button={this.handlestopbtn}
-                setSaved={this.setSavedNew}
+                setSaved={this.setSaved}
               />}
             >
             </Route>
