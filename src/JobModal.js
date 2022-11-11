@@ -4,6 +4,8 @@ import {
   Button,
   Row,
   Container,
+  ListGroup,
+  ListGroupItem,
   Accordion
 } from "react-bootstrap";
 import { withAuth0 } from "@auth0/auth0-react";
@@ -167,12 +169,13 @@ class JobModal extends React.Component {
                             )}
                           </Accordion.Header>
                           <Accordion.Body>
-                            <h4>Based on the following factors:</h4>
-                            <ul>
-                              <li>Average rent of a large apartment</li>
-                              <li>Average rent of a medium apartment</li>
-                              <li>Average rent of a small apartment</li>
-                            </ul>
+                            <ListGroup>
+                            <ListGroupItem><strong>Based on the following factors:</strong></ListGroupItem>
+                            
+                              <ListGroupItem>Average rent of a large apartment</ListGroupItem>
+                              <ListGroupItem>Average rent of a medium apartment</ListGroupItem>
+                              <ListGroupItem>Average rent of a small apartment</ListGroupItem>
+                           </ListGroup>
                           </Accordion.Body>
                         </Accordion.Item>
                         <Accordion.Item eventKey="1">
@@ -189,18 +192,19 @@ class JobModal extends React.Component {
                             )}
                           </Accordion.Header>
                           <Accordion.Body>
-                            <h4>
-                              Based on the price index for a basket of goods and
-                              services such as:
-                            </h4>
-                            <ul>
-                              <li>Ridesharing costs</li>
-                              <li>Basic food costs</li>
-                              <li>
+                            <ListGroup>
+                            <ListGroupItem>
+                              <strong>Based on the price index for a basket of goods and
+                              services such as:</strong>
+                            </ListGroupItem>
+                            
+                              <ListGroupItem>Ridesharing costs</ListGroupItem>
+                              <ListGroupItem>Basic food costs</ListGroupItem>
+                              <ListGroupItem>
                                 Price of entertainment and leisure activities
-                              </li>
-                              <li>Also includeds an inflation score</li>
-                            </ul>
+                              </ListGroupItem>
+                              <ListGroupItem>Also includeds an inflation score</ListGroupItem>
+                           </ListGroup>
                           </Accordion.Body>
                         </Accordion.Item>
                         <Accordion.Item eventKey="2">
@@ -217,12 +221,13 @@ class JobModal extends React.Component {
                             )}
                           </Accordion.Header>
                           <Accordion.Body>
-                            <h4>Based on the following factors:</h4>
-                            <ul>
-                              <li>Government healthcare expenditure</li>
-                              <li>Healthcare quality score</li>
-                              <li>Life expectancy in the area</li>
-                            </ul>
+                            <ListGroup>
+                            <ListGroupItem><strong>Based on the following factors:</strong></ListGroupItem>
+                            
+                              <ListGroupItem>Government healthcare expenditure</ListGroupItem>
+                              <ListGroupItem>Healthcare quality score</ListGroupItem>
+                              <ListGroupItem>Life expectancy in the area</ListGroupItem>
+                           </ListGroup>
                           </Accordion.Body>
                         </Accordion.Item>
                         <Accordion.Item eventKey="3">
@@ -239,12 +244,13 @@ class JobModal extends React.Component {
                             )}
                           </Accordion.Header>
                           <Accordion.Body>
-                            <h4>Based on the following factors:</h4>
-                            <ul>
-                              <li>Presence of hills</li>
-                              <li>Elevation (access to mountains)</li>
-                              <li>Access to water bodies</li>
-                            </ul>
+                            <ListGroup>
+                            <ListGroupItem><strong>Based on the following factors:</strong></ListGroupItem>
+                            
+                              <ListGroupItem>Presence of hills</ListGroupItem>
+                              <ListGroupItem>Elevation (access to mountains)</ListGroupItem>
+                              <ListGroupItem>Access to water bodies</ListGroupItem>
+                           </ListGroup>
                           </Accordion.Body>
                         </Accordion.Item>
                         <Accordion.Item eventKey="4">
@@ -262,15 +268,16 @@ class JobModal extends React.Component {
                             )}
                           </Accordion.Header>
                           <Accordion.Body>
-                            <h4>Based on the following factors:</h4>
-                            <ul>
-                              <li>
+                            <ListGroup>
+                            <ListGroupItem><strong>Based on the following factors:</strong></ListGroupItem>
+                
+                              <ListGroupItem>
                                 Number of cultural buildings such as art
                                 galleries and theaters
-                              </li>
-                              <li>Number of sporting venues</li>
-                              <li>Number of museums and zoos</li>
-                            </ul>
+                              </ListGroupItem>
+                              <ListGroupItem>Number of sporting venues</ListGroupItem>
+                              <ListGroupItem>Number of museums and zoos</ListGroupItem>
+                          </ListGroup>
                           </Accordion.Body>
                         </Accordion.Item>
                       </Accordion>
