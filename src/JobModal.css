@@ -18,3 +18,20 @@
 .modal-content {
   padding: 0rem !important;
 }
+
+.accordion-button {
+  background-color: transparent !important;
+}
+
+.accordion-button:not(.collapsed) {
+  color:black !important;
+}
+
+#first {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.accordion {
+  width: 60%;
+}
