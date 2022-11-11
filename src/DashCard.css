@@ -11,16 +11,20 @@ justify-content: space-between;
 }
 .dashboardCard{
   width: 50vw !important;
+  height: 45vh !important;
   
 }
 .starsAndUpdateOnly{
   display: flex;
-  position: relative;
-  right: 7vw !important;
+  position: absolute;
+  left: .5vw !important;
   justify-content: space-between !important;
   gap: 30px;
 }
 .dashCardList{
   width: 50%;
   height: 100% !important;
+}
+.dashcardRatingAndDelete{
+  padding: 20px;
 }

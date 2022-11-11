@@ -53,7 +53,7 @@ export default class DashCard extends Component {
                   <h6>{this.props.d.city}, {this.props.d.state}</h6>
                 </div>
                 <div>
-                  
+                  <Button href={this.props.d.redirect_url}>See full Listing</Button>
                 </div>
               </h2>
               <h2>{this.props.d.company}</h2>
