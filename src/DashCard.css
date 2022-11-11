@@ -3,7 +3,9 @@
 }
 .dashcardRatingAndDelete{
 display: flex;
-justify-content: space-between;
+justify-content: space-between !important;
+margin-top: 1vw;
+border-top: 1px solid lightgrey;
 
 }
 .dashCardBody p{
@@ -27,10 +29,23 @@ justify-content: space-between;
   width: 50%;
   height: 100% !important;
 }
-.dashcardRatingAndDelete{
-  padding: 20px;
+
+.cardCity {
+  border-top: 1px solid lightgrey;
+  margin-right: none !important;
+  font-size: 2vw !important;
 }
-.dashCardDelete{
+/* .dashCardDelete{
   position: absolute;
   right: 1rem;
+} */
+
+#company {
+  font-style: italic;
+  font-size: 1.5vw;
 }
+
+
+/* #job-title {
+  color: ;
+} */
