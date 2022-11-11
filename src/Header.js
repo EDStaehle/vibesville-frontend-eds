@@ -1,16 +1,12 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Navbar, NavItem } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import Container from 'react-bootstrap/Container';
+
 import "./Header.css"
-export default class Header extends Component {
-  constructor(props){
-    super (props)
-    this.menu= React.createRef();
-    this.menuItem= React.createRef();
-    this.menuItems= React.createRef();
-  }
+ class Header extends React.Component {
+  
   
   render() {
     const menu = document.getElementById('menu')
@@ -77,3 +73,4 @@ export default class Header extends Component {
     );
   }
 }
+export default Header;
