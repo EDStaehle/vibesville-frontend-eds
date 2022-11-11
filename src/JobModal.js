@@ -6,6 +6,7 @@ import {
   Container,
   ListGroup,
   ListGroupItem,
+  Accordion
 } from "react-bootstrap";
 import { withAuth0 } from "@auth0/auth0-react";
 import axios from "axios";
@@ -152,68 +153,129 @@ class JobModal extends React.Component {
                 <div id="cityVibeContainer">
                   <div id="cityVibeContainer">
                     {this.props.job.CityData ? (
-                      <ListGroup>
-                        <ListGroupItem
-                          className={this.scoreColor(
-                            this.props.job.CityData.categories[0]
-                              .score_out_of_10
-                          )}
-                        >
-                          Housing Rating ={" "}
-                          {Math.round(
-                            this.props.job.CityData.categories[0]
-                              .score_out_of_10
-                          )}
-                        </ListGroupItem>
-                        <ListGroupItem
-                          className={this.scoreColor(
-                            this.props.job.CityData.categories[1]
-                              .score_out_of_10
-                          )}
-                        >
-                          Cost of Living Rating ={" "}
-                          {Math.round(
-                            this.props.job.CityData.categories[1]
-                              .score_out_of_10
-                          )}
-                        </ListGroupItem>
-                        <ListGroupItem
-                          className={this.scoreColor(
-                            this.props.job.CityData.categories[8]
-                              .score_out_of_10
-                          )}
-                        >
-                          Health Care Rating ={" "}
-                          {Math.round(
-                            this.props.job.CityData.categories[8]
-                              .score_out_of_10
-                          )}
-                        </ListGroupItem>
-                        <ListGroupItem
-                          className={this.scoreColor(
-                            this.props.job.CityData.categories[16]
-                              .score_out_of_10
-                          )}
-                        >
-                          Nature Vibes ={" "}
-                          {Math.round(
-                            this.props.job.CityData.categories[16]
-                              .score_out_of_10
-                          )}
-                        </ListGroupItem>
-                        <ListGroupItem
-                          className={this.scoreColor(
-                            this.props.job.CityData.categories[14]
-                              .score_out_of_10
-                          )}
-                        >
-                          Leisure and Culture ={" "}
-                          {Math.round(
-                            this.props.job.CityData.categories[14]
-                              .score_out_of_10
-                          )}
-                        </ListGroupItem>
-                      </ListGroup>
+                      <Accordion defaultActiveKey="0">
+                        <Accordion.Item eventKey="0">
+                          <Accordion.Header
+                            id="first"
+                            className={this.scoreColor(
+                              this.props.job.CityData.categories[0]
+                                .score_out_of_10
+                            )}
+                          >
+                            Housing Cost Rating ={" "}
+                            {Math.round(
+                              this.props.job.CityData.categories[0]
+                                .score_out_of_10
+                            )}
+                          </Accordion.Header>
+                          <Accordion.Body>
+                            <h4>Based on the following factors:</h4>
+                            <ul>
+                              <li>Average rent of a large apartment</li>
+                              <li>Average rent of a medium apartment</li>
+                              <li>Average rent of a small apartment</li>
+                            </ul>
+                          </Accordion.Body>
+                        </Accordion.Item>
+                        <Accordion.Item eventKey="1">
+                          <Accordion.Header
+                            className={this.scoreColor(
+                              this.props.job.CityData.categories[1]
+                                .score_out_of_10
+                            )}
+                          >
+                            Cost of Living Rating ={" "}
+                            {Math.round(
+                              this.props.job.CityData.categories[1]
+                                .score_out_of_10
+                            )}
+                          </Accordion.Header>
+                          <Accordion.Body>
+                            <h4>
+                              Based on the price index for a basket of goods and
+                              services such as:
+                            </h4>
+                            <ul>
+                              <li>Ridesharing costs</li>
+                              <li>Basic food costs</li>
+                              <li>
+                                Price of entertainment and leisure activities
+                              </li>
+                              <li>Also includeds an inflation score</li>
+                            </ul>
+                          </Accordion.Body>
+                        </Accordion.Item>
+                        <Accordion.Item eventKey="2">
+                          <Accordion.Header
+                            className={this.scoreColor(
+                              this.props.job.CityData.categories[8]
+                                .score_out_of_10
+                            )}
+                          >
+                            Health Care Rating ={" "}
+                            {Math.round(
+                              this.props.job.CityData.categories[8]
+                                .score_out_of_10
+                            )}
+                          </Accordion.Header>
+                          <Accordion.Body>
+                            <h4>Based on the following factors:</h4>
+                            <ul>
+                              <li>Government healthcare expenditure</li>
+                              <li>Healthcare quality score</li>
+                              <li>Life expectancy in the area</li>
+                            </ul>
+                          </Accordion.Body>
+                        </Accordion.Item>
+                        <Accordion.Item eventKey="3">
+                          <Accordion.Header
+                            className={this.scoreColor(
+                              this.props.job.CityData.categories[16]
+                                .score_out_of_10
+                            )}
+                          >
+                            Nature Vibes ={" "}
+                            {Math.round(
+                              this.props.job.CityData.categories[16]
+                                .score_out_of_10
+                            )}
+                          </Accordion.Header>
+                          <Accordion.Body>
+                            <h4>Based on the following factors:</h4>
+                            <ul>
+                              <li>Presence of hills</li>
+                              <li>Elevation (access to mountains)</li>
+                              <li>Access to water bodies</li>
+                            </ul>
+                          </Accordion.Body>
+                        </Accordion.Item>
+                        <Accordion.Item eventKey="4">
+                          <Accordion.Header
+                            as="div"
+                            className={this.scoreColor(
+                              this.props.job.CityData.categories[14]
+                                .score_out_of_10
+                            )}
+                          >
+                            Leisure and Culture ={" "}
+                            {Math.round(
+                              this.props.job.CityData.categories[14]
+                                .score_out_of_10
+                            )}
+                          </Accordion.Header>
+                          <Accordion.Body>
+                            <h4>Based on the following factors:</h4>
+                            <ul>
+                              <li>
+                                Number of cultural buildings such as art
+                                galleries and theaters
+                              </li>
+                              <li>Number of sporting venues</li>
+                              <li>Number of museums and zoos</li>
+                            </ul>
+                          </Accordion.Body>
+                        </Accordion.Item>
+                      </Accordion>
                     ) : null}
                   </div>
                   {this.props.auth0.isAuthenticated ? (
