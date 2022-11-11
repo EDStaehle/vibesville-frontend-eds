@@ -3,6 +3,7 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import { Rating } from 'react-simple-star-rating'
 import './DashCard.css'
+import ListGroup from 'react-bootstrap/ListGroup';
 export default class DashCard extends Component {
   constructor(props) {
     super(props)
@@ -27,7 +28,19 @@ export default class DashCard extends Component {
   handleClick = () => {
     this.setState({ buttonisclicked: true })
   }
+  scoreColor = (score) => {
+    if (score < 3) {
+      return 'red';
+    }
+    else if (score < 6) {
+      console.log('did something with score');
+      return 'yellow'; 
+    }
+   
+    else return 'green';
+  }
   render() {
+    
     return (
       <Card className='dashboardCard'>
         <Card.Body className='dashCardBody'>
@@ -51,17 +64,34 @@ export default class DashCard extends Component {
                 <p>{this.props.d.description}</p>
               </div>
               <div className='dashCardScore'>
-                <p>Housing score: {this.props.d.housing_score}</p>
-                <p>Cost of Living: {this.props.d.COL_score}</p>
-                <p>Healthcare: {this.props.d.health_score}</p>
-                <p>Nature: {this.props.d.nature_score}</p>
-                <p>Leisure and Culture: {this.props.d.culture_score}</p>
-                <p>Overall Score rating: {this.props.d.city_score}</p>
+              <ListGroup className='dashCardList'>
+                    <ListGroup.Item className={this.scoreColor(this.props.d.housing_score)}>
+                      Housing Rating ={this.props.d.housing_score}
+                     
+                    </ListGroup.Item>
+                    <ListGroup.Item className={this.scoreColor(this.props.d.COL_score)}>
+                      Cost of Living Rating ={this.props.d.COL_score}
+                     
+                    </ListGroup.Item>
+                    <ListGroup.Item className={this.scoreColor(this.props.d.health_score)}>
+                      Health Care Rating ={this.props.d.health_score}
+                      
+                    </ListGroup.Item>
+                    <ListGroup.Item className={this.scoreColor(this.props.d.nature_score)}>
+                      Nature Vibes ={this.props.d.nature_score}
+                    
+                    </ListGroup.Item>
+                    <ListGroup.Item className={this.scoreColor(this.props.d.culture_score)}>
+                      Leisure and Culture ={this.props.d.culture_score}
+                      
+                    </ListGroup.Item>
+                  </ListGroup>
               </div>
               <div className='cardStars'>
                 {
                   !this.state.buttonisclicked ?
                     <div  className='dashcardRatingAndDelete'>
+                      <div className='starsAndUpdateOnly'>
                       <Rating
                         className='starRating'
                         size={70}
@@ -69,6 +99,7 @@ export default class DashCard extends Component {
                         initialValue={this.props.d.user_score}
                         readonly={true} />
                       <Button onClick={this.handleClick}>Update</Button>
+                      </div>
                       <div className='dashCardDelete'><Button onClick={() => { this.props.deleteSaved(this.props.d._id) }} id='deleteJob' variant="danger">X</Button></div>
                     </div>
                     :

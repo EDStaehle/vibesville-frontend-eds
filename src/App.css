@@ -15,6 +15,7 @@ searchbar.button{
 }
 
 .login-nav {
+  min-height: 6vh !important;
   display: flex;
   margin-top: 0px !important;
   background-color: #57CC99;
@@ -27,5 +28,13 @@ searchbar.button{
   display: flex;
   justify-content: space-around;
   gap: 2rem;
+}
+.loggedInAs{
+  color: white;
+  width: 440px;
+  display: flex;
+  position: absolute;
+  left: 82vw;
+  font-weight: bold;
 }
 

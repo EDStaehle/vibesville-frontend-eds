@@ -92,7 +92,11 @@ class App extends React.Component {
             <div className="auth-buttons">
               {this.props.auth0.isAuthenticated ?
                 <>
+                <div className='loggedInAs'>
+                  <div>You are logged in as {this.props.auth0.user.email}</div>
                   <Logout />
+
+                </div>
                   <Sidebar
                     setSaved={this.setSaved}
                     saved={this.state.saved}

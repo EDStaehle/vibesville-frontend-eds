@@ -3,4 +3,24 @@
 }
 .dashcardRatingAndDelete{
 display: flex;
+justify-content: space-between;
+
+}
+.dashCardBody p{
+  width: auto !important;
+}
+.dashboardCard{
+  width: 50vw !important;
+  
+}
+.starsAndUpdateOnly{
+  display: flex;
+  position: relative;
+  right: 7vw !important;
+  justify-content: space-between !important;
+  gap: 30px;
+}
+.dashCardList{
+  width: 50%;
+  height: 100% !important;
 }

@@ -3,8 +3,9 @@ import { Navbar, NavItem } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import Container from 'react-bootstrap/Container';
+
 import "./Header.css"
-export default class Header extends Component {
+ class Header extends React.Component {
   constructor(props){
     super (props)
     this.menu= React.createRef();
@@ -77,3 +78,4 @@ export default class Header extends Component {
     );
   }
 }
+export default Header;
