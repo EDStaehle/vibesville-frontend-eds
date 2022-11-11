@@ -11,13 +11,15 @@ justify-content: space-between;
 }
 .dashboardCard{
   width: 50vw !important;
-  height: 45vh !important;
+  height: auto !important;
   
 }
 .starsAndUpdateOnly{
+  width: auto;
   display: flex;
   position: absolute;
-  left: .5vw !important;
+  margin-right: 10px;
+ left: 2rem !important;
   justify-content: space-between !important;
   gap: 30px;
 }
@@ -27,4 +29,8 @@ justify-content: space-between;
 }
 .dashcardRatingAndDelete{
   padding: 20px;
+}
+.dashCardDelete{
+  position: absolute;
+  right: 1rem;
 }
