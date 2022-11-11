@@ -97,8 +97,9 @@
 }
 
 
-.cardCity {
+.offcanvas-body .cardCity {
   padding-right: 30px;
+  border-top: none;
 }
 
 .sideStar {
