@@ -81,11 +81,11 @@ class Main extends React.Component {
         </div>
         <div className="job-list">
           {this.state.jobs
-            ? this.state.jobs.map((job,idx) => {
-                return (
-                  <JobCard job={job} modalOpen={this.openModal} key={idx} />
-                );
-              })
+            ? this.state.jobs.map((job, idx) => {
+              return (
+                <JobCard job={job} modalOpen={this.openModal} key={idx} />
+              );
+            })
             : null}
           {
             <JobModal
