@@ -11,22 +11,21 @@ export default class JobCard extends Component {
       return 'red';
     }
     else if (score < 6) {
-      console.log('did something with score');
-      return 'yellow'; 
+      return 'yellow';
     }
-   
+
     else return 'green';
   }
 
   render() {
     let score = this.props.job.CityData
       ? [
-          Math.round(this.props.job.CityData.categories[0].score_out_of_10),
-          Math.round(this.props.job.CityData.categories[16].score_out_of_10),
-          Math.round(this.props.job.CityData.categories[1].score_out_of_10),
-          Math.round(this.props.job.CityData.categories[8].score_out_of_10),
-          Math.round(this.props.job.CityData.categories[14].score_out_of_10),
-        ]
+        Math.round(this.props.job.CityData.categories[0].score_out_of_10),
+        Math.round(this.props.job.CityData.categories[16].score_out_of_10),
+        Math.round(this.props.job.CityData.categories[1].score_out_of_10),
+        Math.round(this.props.job.CityData.categories[8].score_out_of_10),
+        Math.round(this.props.job.CityData.categories[14].score_out_of_10),
+      ]
       : null;
     let avgScore = score
       ? score.reduce((a, b) => a + b, 0) / score.length

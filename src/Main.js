@@ -19,7 +19,7 @@ class Main extends React.Component {
 
   handleInput = (e) => {
     e.preventDefault();
-    console.log(e.target.value);
+
     this.setState({
       jobTitle: e.target.value,
     });
@@ -49,7 +49,6 @@ class Main extends React.Component {
   };
 
   render() {
-    console.log(this.state.jobs)
     return (
       <div className="mainContain">
         <div className="hero-contain">

@@ -8,14 +8,13 @@ import axios from 'axios';
 import { Rating } from 'react-simple-star-rating'
 
 class Sidebar extends React.Component {
-  async componentDidMount(){
-    if(this.props.auth0.isAuthenticated){
+  async componentDidMount() {
+    if (this.props.auth0.isAuthenticated) {
 
-        let savedData = await axios.get(
-          `${process.env.REACT_APP_SERVER}/saved/${this.props.auth0.user.email}`
-        );
-        console.log(this.props.savedData)
-        this.props.setSaved(savedData.data)
+      let savedData = await axios.get(
+        `${process.env.REACT_APP_SERVER}/saved/${this.props.auth0.user.email}`
+      );
+      this.props.setSaved(savedData.data)
 
     }
   }
@@ -25,8 +24,8 @@ class Sidebar extends React.Component {
 
 
   render() {
-    let sorted = this.props.saved.sort((a,b) => b.user_score - a.user_score)
-    let data = sorted.map((d,idx) => (
+    let sorted = this.props.saved.sort((a, b) => b.user_score - a.user_score)
+    let data = sorted.map((d, idx) => (
       <Card key={idx} className='sidebarCard'>
         <Card.Body className='cardBody'>
           <Card.Title className='sidebarTitle'>
@@ -35,9 +34,9 @@ class Sidebar extends React.Component {
                 <h2>{d.title}</h2>
                 <h4>{d.company}</h4>
               </div>
-                <div className='cardCity'>
-                  <h6>{d.city},{d.state}</h6>
-                </div>
+              <div className='cardCity'>
+                <h6>{d.city},{d.state}</h6>
+              </div>
             </div>
           </Card.Title>
           <Card.Text>
@@ -63,21 +62,21 @@ class Sidebar extends React.Component {
     ))
     return (
       <>
-      {
-        this.props.button? null:
-      <Button id = 'sidebar-btn' variant="primary" onClick={this.props.showCanvas}>
-        Saved Jobs
-      </Button> 
-      }
-      <Offcanvas className='sideBarCanvas' show={this.props.show} onHide={this.props.hideCanvas} placement='end'>
-        <Offcanvas.Header closeButton>
-          <Offcanvas.Title>Saved Jobs</Offcanvas.Title>
-        </Offcanvas.Header>
-        <Offcanvas.Body>
-          {data}
-        </Offcanvas.Body>
-      </Offcanvas>
-    </>
+        {
+          this.props.button ? null :
+            <Button id='sidebar-btn' variant="primary" onClick={this.props.showCanvas}>
+              Saved Jobs
+            </Button>
+        }
+        <Offcanvas className='sideBarCanvas' show={this.props.show} onHide={this.props.hideCanvas} placement='end'>
+          <Offcanvas.Header closeButton>
+            <Offcanvas.Title>Saved Jobs</Offcanvas.Title>
+          </Offcanvas.Header>
+          <Offcanvas.Body>
+            {data}
+          </Offcanvas.Body>
+        </Offcanvas>
+      </>
     )
   }
 }

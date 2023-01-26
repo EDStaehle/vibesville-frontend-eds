@@ -29,12 +29,12 @@ class JobModal extends React.Component {
   handleJobSumbit = () => {
     let score = this.props.job.CityData
       ? [
-          Math.round(this.props.job.CityData.categories[0].score_out_of_10),
-          Math.round(this.props.job.CityData.categories[16].score_out_of_10),
-          Math.round(this.props.job.CityData.categories[1].score_out_of_10),
-          Math.round(this.props.job.CityData.categories[8].score_out_of_10),
-          Math.round(this.props.job.CityData.categories[14].score_out_of_10),
-        ]
+        Math.round(this.props.job.CityData.categories[0].score_out_of_10),
+        Math.round(this.props.job.CityData.categories[16].score_out_of_10),
+        Math.round(this.props.job.CityData.categories[1].score_out_of_10),
+        Math.round(this.props.job.CityData.categories[8].score_out_of_10),
+        Math.round(this.props.job.CityData.categories[14].score_out_of_10),
+      ]
       : 0;
     let avgScore =
       score !== 0 ? score.reduce((a, b) => a + b, 0) / score.length : 0;
@@ -73,7 +73,7 @@ class JobModal extends React.Component {
     this.postFavJob(favoriteJob);
     this.props.onHide();
   };
-  
+
 
 
   postFavJob = async (favoriteJobObj) => {
@@ -89,19 +89,18 @@ class JobModal extends React.Component {
     if (score < 3) {
       return "red";
     } else if (score < 6) {
-      console.log("did something with score");
       return "yellow";
     } else return "green";
   };
   render() {
     let score = this.props.job.CityData
       ? [
-          Math.round(this.props.job.CityData.categories[0].score_out_of_10),
-          Math.round(this.props.job.CityData.categories[16].score_out_of_10),
-          Math.round(this.props.job.CityData.categories[1].score_out_of_10),
-          Math.round(this.props.job.CityData.categories[8].score_out_of_10),
-          Math.round(this.props.job.CityData.categories[14].score_out_of_10),
-        ]
+        Math.round(this.props.job.CityData.categories[0].score_out_of_10),
+        Math.round(this.props.job.CityData.categories[16].score_out_of_10),
+        Math.round(this.props.job.CityData.categories[1].score_out_of_10),
+        Math.round(this.props.job.CityData.categories[8].score_out_of_10),
+        Math.round(this.props.job.CityData.categories[14].score_out_of_10),
+      ]
       : null;
     let avgScore = score
       ? score.reduce((a, b) => a + b, 0) / score.length
@@ -170,12 +169,12 @@ class JobModal extends React.Component {
                           </Accordion.Header>
                           <Accordion.Body>
                             <ListGroup>
-                            <ListGroupItem><strong>Based on the following factors:</strong></ListGroupItem>
-                            
+                              <ListGroupItem><strong>Based on the following factors:</strong></ListGroupItem>
+
                               <ListGroupItem>Average rent of a large apartment</ListGroupItem>
                               <ListGroupItem>Average rent of a medium apartment</ListGroupItem>
                               <ListGroupItem>Average rent of a small apartment</ListGroupItem>
-                           </ListGroup>
+                            </ListGroup>
                           </Accordion.Body>
                         </Accordion.Item>
                         <Accordion.Item eventKey="1">
@@ -193,18 +192,18 @@ class JobModal extends React.Component {
                           </Accordion.Header>
                           <Accordion.Body>
                             <ListGroup>
-                            <ListGroupItem>
-                              <strong>Based on the price index for a basket of goods and
-                              services such as:</strong>
-                            </ListGroupItem>
-                            
+                              <ListGroupItem>
+                                <strong>Based on the price index for a basket of goods and
+                                  services such as:</strong>
+                              </ListGroupItem>
+
                               <ListGroupItem>Ridesharing costs</ListGroupItem>
                               <ListGroupItem>Basic food costs</ListGroupItem>
                               <ListGroupItem>
                                 Price of entertainment and leisure activities
                               </ListGroupItem>
                               <ListGroupItem>Also includeds an inflation score</ListGroupItem>
-                           </ListGroup>
+                            </ListGroup>
                           </Accordion.Body>
                         </Accordion.Item>
                         <Accordion.Item eventKey="2">
@@ -222,12 +221,12 @@ class JobModal extends React.Component {
                           </Accordion.Header>
                           <Accordion.Body>
                             <ListGroup>
-                            <ListGroupItem><strong>Based on the following factors:</strong></ListGroupItem>
-                            
+                              <ListGroupItem><strong>Based on the following factors:</strong></ListGroupItem>
+
                               <ListGroupItem>Government healthcare expenditure</ListGroupItem>
                               <ListGroupItem>Healthcare quality score</ListGroupItem>
                               <ListGroupItem>Life expectancy in the area</ListGroupItem>
-                           </ListGroup>
+                            </ListGroup>
                           </Accordion.Body>
                         </Accordion.Item>
                         <Accordion.Item eventKey="3">
@@ -245,12 +244,12 @@ class JobModal extends React.Component {
                           </Accordion.Header>
                           <Accordion.Body>
                             <ListGroup>
-                            <ListGroupItem><strong>Based on the following factors:</strong></ListGroupItem>
-                            
+                              <ListGroupItem><strong>Based on the following factors:</strong></ListGroupItem>
+
                               <ListGroupItem>Presence of hills</ListGroupItem>
                               <ListGroupItem>Elevation (access to mountains)</ListGroupItem>
                               <ListGroupItem>Access to water bodies</ListGroupItem>
-                           </ListGroup>
+                            </ListGroup>
                           </Accordion.Body>
                         </Accordion.Item>
                         <Accordion.Item eventKey="4">
@@ -269,15 +268,15 @@ class JobModal extends React.Component {
                           </Accordion.Header>
                           <Accordion.Body>
                             <ListGroup>
-                            <ListGroupItem><strong>Based on the following factors:</strong></ListGroupItem>
-                
+                              <ListGroupItem><strong>Based on the following factors:</strong></ListGroupItem>
+
                               <ListGroupItem>
                                 Number of cultural buildings such as art
                                 galleries and theaters
                               </ListGroupItem>
                               <ListGroupItem>Number of sporting venues</ListGroupItem>
                               <ListGroupItem>Number of museums and zoos</ListGroupItem>
-                          </ListGroup>
+                            </ListGroup>
                           </Accordion.Body>
                         </Accordion.Item>
                       </Accordion>

@@ -33,7 +33,6 @@ export default class DashCard extends Component {
     if (score < 3) {
       return "red";
     } else if (score < 6) {
-      console.log("did something with score");
       return "yellow";
     } else return "green";
   };
@@ -46,13 +45,13 @@ export default class DashCard extends Component {
               <h2 id='job-title'>
                 {this.props.d.title}
               </h2>
-               <h2 id='company'>{this.props.d.company}</h2>
-                <div>
-                  <Button href={this.props.d.redirect_url}>
-                    See full Listing
-                  </Button>
-                </div>
-              
+              <h2 id='company'>{this.props.d.company}</h2>
+              <div>
+                <Button href={this.props.d.redirect_url}>
+                  See full Listing
+                </Button>
+              </div>
+
             </div>
           </Card.Title>
           <Card.Text>
@@ -60,9 +59,9 @@ export default class DashCard extends Component {
               <div>
                 <p>{this.props.d.description}</p>
               </div>
-                <h6 className="cardCity">
-                  {this.props.d.city}, {this.props.d.state}
-                </h6>
+              <h6 className="cardCity">
+                {this.props.d.city}, {this.props.d.state}
+              </h6>
               <div className="dashCardScore">
                 <ListGroup className="dashCardList">
                   <ListGroup.Item
